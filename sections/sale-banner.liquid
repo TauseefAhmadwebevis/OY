@@ -1,0 +1,25 @@
+<section class="sale-banner">
+  <div class="collection-page-banner">
+    {% if section.settings['desktop-banner'] != blank %}
+      <div class="desktop-banner">
+        <img src="{{ section.settings.desktop-banner | img_url:'original' }}" alt="desktop" loading="lazy">
+      </div>
+    {% endif %}
+    {% if section.settings['mobile-banner'] != blank %}
+      <div class="mobile-banner">
+        <img src="{{ section.settings.mobile-banner | img_url:'original' }}" alt="mobile" loading="lazy">
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Sale Banner",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Sale Banner"
+    }
+  ]
+}
+{% endschema %}

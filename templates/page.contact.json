@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "925ca913-9c27-4aea-8fe7-35d10adaff0f": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16739649421540__925ca913-9c27-4aea-8fe7-35d10adaff0f-1687411195a5c1d21b-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Your Next Ornament Awaits",
+            "title_size": 79,
+            "subheading": "25% off everything, today only",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Background_Mockup_Brunch_Tree_Dark-06.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 4
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649421540__925ca913-9c27-4aea-8fe7-35d10adaff0f-1687411195a5c1d21b-0"
+      ],
+      "settings": {
+        "section_height": "550px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "7048bba6-c178-4b47-87f7-eaa08cfaaa9f": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16739649421540__7048bba6-c178-4b47-87f7-eaa08cfaaa9f-1687411365df579f6a-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2 style=\"text-align:center;\">Save 25% This Christmas</h2><p style=\"text-align: center;\">Make this season extra merry and bright by joining our Christmas List.</p>\n<div class=\"klaviyo-form-XVaYtf\"></div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649421540__7048bba6-c178-4b47-87f7-eaa08cfaaa9f-1687411365df579f6a-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "f3ca7926-1fd7-4d01-8252-237076b0dc7a": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/06-07-2022_16.48.41.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Why Shop with Us?",
+        "text": "<p>For us it's about quality, customers, and Christmas 💙</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "7a4a1eeb-7067-4b92-957d-08aaef6b98e0": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Trending Now",
+        "home_featured_products": "everything-christmas",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "36bbd35c-1e22-4877-8f7a-e1e787c877b6": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Our Newest Releases",
+        "home_featured_products": "2023-new-releases",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": true
+      }
+    },
+    "a91670f5-ed12-4d01-9751-3c768688c4e1": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Blown Glass Ornaments",
+        "home_featured_products": "glass-ornaments-old-e5f258",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "925ca913-9c27-4aea-8fe7-35d10adaff0f",
+    "7048bba6-c178-4b47-87f7-eaa08cfaaa9f",
+    "f3ca7926-1fd7-4d01-8252-237076b0dc7a",
+    "7a4a1eeb-7067-4b92-957d-08aaef6b98e0",
+    "36bbd35c-1e22-4877-8f7a-e1e787c877b6",
+    "a91670f5-ed12-4d01-9751-3c768688c4e1"
+  ]
+}

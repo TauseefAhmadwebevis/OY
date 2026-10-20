@@ -1,0 +1,192 @@
+{{ 'section-landing-join.css' | asset_url | stylesheet_tag }}
+{% render 'section-config' %}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+<div class="section-{{ section.id }} {{section.settings.sect_class}}">
+  {% if section.settings.heading != blank %}
+    <p class="section-landing-join__heading">{{ section.settings.heading }}</p>
+  {% endif %}
+  <div class="page-width">
+    <div class="section-landing-join__images gap-{{ section.settings.column_gap }}">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <{% if block.settings.url != blank %}a href="{{ block.settings.url }}"{% else %}div{% endif %} class="section-landing-join__item">
+            {% if block.settings.image != blank %}
+              <div class="section-landing-join__image">
+                {{
+                block.settings.image
+                | image_url: width: 3840
+                | image_tag:
+                loading: 'lazy',
+                class: 'desktop',
+                width: block.settings.image.width,
+                alt: block.settings.image.alt
+                }}
+              </div>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <p>{{ block.settings.title }}</p>
+            {% endif %}
+          </{% if block.settings.url != blank %}a{% else %}div{% endif %}>
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% if section.settings.button_text != blank %}
+      <a class="section-landing-join__button btn btn--{{ section.settings.button_type }} btn--small section-header__link" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  // document.querySelector('.section-{{ section.id }} .section-landing-join__button').addEventListener('click', function(e) {
+  //   e.preventDefault();
+  //   slowScrollTo(document.getElementById('affiliate-sign-up-form'));
+  // });
+
+  function slowScrollTo(element) {
+    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition - 100;
+    const duration = 1000; // Duration in milliseconds
+    let start = null;
+
+    window.requestAnimationFrame(function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const progressRatio = Math.min(progress / duration, 1);
+      const easeInOutQuad = progressRatio < 0.5
+        ? 2 * progressRatio * progressRatio
+        : 1 - Math.pow(-2 * progressRatio + 2, 2) / 2;
+
+      window.scrollTo(0, startPosition + distance * easeInOutQuad);
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Landing join",
+  "tag": "section",
+  "class": "section-landing-join",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "button_type",
+      "label": "Button type",
+      "options": [
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "primary",
+          "label": "Primary"
+        }
+      ],
+      "default": "secondary"
+    },
+    {
+      "type": "select",
+      "id": "column_gap",
+      "label": "Column gap",
+      "options": [
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join Thousands Of Beauty Insiders!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "apply in seconds"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 92
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 38
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "text",
+      "id": "sect_class",
+      "label": "Custom class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing join",
+      "category": "products"
+    }
+  ]
+}
+{% endschema %}

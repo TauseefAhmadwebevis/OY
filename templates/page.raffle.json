@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "b553b4cf-50bb-4cb9-a8bc-ec98cd8d6ba5": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16739748249828__b553b4cf-50bb-4cb9-a8bc-ec98cd8d6ba5-1687411195a5c1d21b-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Thank You for Entering!",
+            "title_size": 74,
+            "subheading": "We wish you the best of luck",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Background_Mockup_Brunch_Tree_Dark-06.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748249828__b553b4cf-50bb-4cb9-a8bc-ec98cd8d6ba5-1687411195a5c1d21b-0"
+      ],
+      "settings": {
+        "section_height": "550px",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "a1e83831-9cb8-4731-9fb4-ecd10f11420b": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16739748249828__a1e83831-9cb8-4731-9fb4-ecd10f11420b-1687411365df579f6a-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2 style=\"text-align:center;\">Enter your email below to join our raffle</h2><p style=\"text-align: center;\">.</p>\n<div class=\"klaviyo-form-VGFnb5\"></div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748249828__a1e83831-9cb8-4731-9fb4-ecd10f11420b-1687411365df579f6a-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "254f4caa-6b44-4f93-8fc1-3d2096c4199c": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/06-07-2022_16.48.41.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Check out our shop while you're at it!",
+        "text": "<p>For us it's about quality, customers, and the holidays 💙</p>",
+        "button_label": "",
+        "button_link": "https://ornamentallyyou.com",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": true,
+        "top_padding": false,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "401c7b4c-11f2-493f-97ef-2c9eb1864ec9": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Trending Now",
+        "home_featured_products": "everything-christmas",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": true
+      }
+    },
+    "02349d52-2ee8-4dff-af75-92706179b43f": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Our Newest Releases",
+        "home_featured_products": "2023-new-releases",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": true
+      }
+    },
+    "0f0815ae-5da2-4f52-bce3-510a5c9fa0b0": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Blown Glass Ornaments",
+        "home_featured_products": "glass-ornaments-old-e5f258",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b553b4cf-50bb-4cb9-a8bc-ec98cd8d6ba5",
+    "a1e83831-9cb8-4731-9fb4-ecd10f11420b",
+    "254f4caa-6b44-4f93-8fc1-3d2096c4199c",
+    "401c7b4c-11f2-493f-97ef-2c9eb1864ec9",
+    "02349d52-2ee8-4dff-af75-92706179b43f",
+    "0f0815ae-5da2-4f52-bce3-510a5c9fa0b0"
+  ]
+}

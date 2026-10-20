@@ -1,0 +1,236 @@
+{% assign canonical_url = canonical_url | split: '-kmnx-vt-' | first %}
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
+  <head>
+<script type="text/javascript" data-squaredance="amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXShPzdUjiYW7iwnBi52phVV" data-sqdv="1.0.1">
+try{squaredanceCart=JSON.parse(decodeURIComponent("{{cart.items|json|url_encode}}"))}catch(e){}
+;!function(j,u,m,b,l,e){var n="jumbleberry",i="3.2.3",o=function(){o.v==i&&o.e?o.e.apply(o,arguments):o.q.push(arguments)}
+,a=encodeURIComponent,t=decodeURIComponent,d=j.location;(o.push=o).l=!1,o.q=[],o.v=i,o.duid=function(n){return(
+n=n&&u.cookie.match(RegExp(t("%5Cs*")+n.substr(0,21)+"id=([^;]+)")))?t(n[1].split(".")[0]):""},o.g=function(n,i){return!!(
+i=RegExp("^[^#]*[?&]"+n+"=([^&#]+)").exec(i||d.href))&&t(i[1].replace(/\+/g," "))},o.s=function(n){for(var i=Math.round((
+new Date).getTime()/1e3),t=d.hostname.split("."),r=t.length-1;0<r--&&/^(([a-z0-9]{4}-?){8}|[0-9]+)$/i.test(n)&&n!=o.duid(
+o.p);)u.cookie=o.p.substr(0,21)+"id="+a(n)+"."+i+".0."+i+".; path=/; max-age=63072000; domain=."+t.slice(r,t.length
+).join(".")},o.i=function(n,i,t){if("init"==n)return[o.u=o.duid(o.p=i),o.s(o.h=t||o.u)];t=t||{},(n=u.createElement(
+"iframe")).src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&event="+a(i||"")+"&transid="+a(t.transaction_id||"")+"&oi="+a(
+t.order_index||"")+"&ctx="+a(JSON.stringify(t)),n.height=n.width=0,n.style="display:none;visibility:hidden",
+n.sandbox="allow-forms allow-same-origin allow-scripts",n.referrerPolicy="unsafe-url",(u.body||u.head).appendChild(n)},
+o.m=o.e=function(){var n,i;!j._RNGSeed&&o.i.apply(o,arguments)&&(n=u.createElement(m),i=u.getElementsByTagName(m)[0],
+n.src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&v="+o.v,n.async=!!o.h,o.e=!1,o.q.unshift(arguments),j.addEventListener(
+"beforeunload",n.onerror=function(){o.e=o.i;for(var n=0;n<o.q.length;++n)o.apply(o,o.q[n]);o.q=[]}),
+i.parentNode.insertBefore(n,i))},j[n]=j[n]||o,j[n].d=b}(window,document,"script","https://www.maxepv.com/");
+
+jumbleberry("init", "amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXSCsrlTp5-zLheUTNFm04idouHOF_WaAuRBFx-pUJHQCTwu0Ls3K7RG7YzDbyPM5oY~", jumbleberry.g("sqdid") || jumbleberry.g("click_id"));
+</script>
+        <!-- heatmap.com snippet -->
+    <script>
+      (function() {
+        var _heatmap_paq = window._heatmap_paq = window._heatmap_paq || [];
+        var heatUrl = window.heatUrl = 'https://dashboard.heatmap.com/';
+        function hLoadInitialScript(url) {
+          var script = document.createElement('script'); script.type = 'text/javascript';
+          script.src = url; script.async = false; script.defer = true; document.head.appendChild(script);
+        }
+        hLoadInitialScript(heatUrl+'preprocessor.min.js?sid=1641');
+        window.addEventListener('DOMContentLoaded', function (){
+            if(typeof _heatmap_paq != 'object' || _heatmap_paq.length == 0) {
+              _heatmap_paq.push(['setTrackerUrl', heatUrl+'sttracker.php']);
+              hLoadInitialScript(heatUrl+'heatmap-light.min.js?sid=1641');
+            }
+        });
+      })();
+    </script>
+    <!-- End heatmap.com snippet Code -->
+
+    {% render 'revenueRoll-GTM' %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_button }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {% if dropinblog != 1 -%}
+      {%- render 'seo-title' -%}
+    {% endif %}
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% if dropinblog != 1 -%}
+      {%- render 'social-meta-tags' -%}
+    {% endif %}
+
+    {%- render 'font-face' -%}
+    {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- render 'css-variables' -%}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+      window.theme = window.theme || {};
+      theme.routes = {
+        home: "{{ routes.root_url }}",
+        cart: "{{ routes.cart_url | append: '.js' }}",
+        cartPage: "{{ routes.cart_url }}",
+        cartAdd: "{{ routes.cart_add_url | append: '.js' }}",
+        cartChange: "{{ routes.cart_change_url | append: '.js' }}",
+        search: "{{ routes.search_url }}",
+        predictiveSearch: "{{ routes.predictive_search_url }}"
+      };
+      theme.strings = {
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        inStockLabel: {{ 'products.product.in_stock_label' | t | json }},
+        oneStockLabel: {{ 'products.product.stock_label.one' | t: count: '[count]' | json }},
+        otherStockLabel: {{ 'products.product.stock_label.other' | t: count: '[count]' | json }},
+        willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+        willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+        waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+        savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+        cartEmpty: {{ 'cart.general.empty' | t | json }},
+        cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }},
+        searchCollections: {{ 'general.search.collections' | t | json }},
+        searchPages: {{ 'general.search.pages' | t | json }},
+        searchArticles: {{ 'general.search.articles' | t | json }},
+        productFrom: {{ 'products.general.from_text_html' | t: price: '' | json }},
+        maxQuantity: {{ 'cart.general.max_quantity' | t: quantity: '[quantity]', title: '[title]' | json }}
+      };
+      theme.settings = {
+        cartType: {{ settings.cart_type | json }},
+        isCustomerTemplate: {% if request.page_type contains 'customers/' %}true{% else %}false{% endif %},
+        moneyFormat: {{ shop.money_format | json }},
+        saveType: {{ settings.product_save_type | json }},
+        productImageSize: {{ settings.product_grid_image_size | json }},
+        productImageCover: {{ settings.product_grid_image_fill }},
+        predictiveSearch: {{ settings.predictive_search_enabled }},
+        predictiveSearchType: {{ settings.search_type | json }},
+        predictiveSearchVendor: {{ settings.predictive_search_show_vendor | json }},
+        predictiveSearchPrice: {{ settings.predictive_search_show_price | json }},
+        quickView: {{ settings.quick_shop_enable }},
+        themeName: 'Impulse',
+        themeVersion: "7.3.4"
+      };
+    </script>
+
+    {{ content_for_header }}
+
+    <script src="{{ 'vendor-scripts-v11.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+    {%- if shop.enabled_currencies.size > 1 -%}
+      <link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}">
+    {%- endif -%}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cro-express-pay.js' | asset_url }}" defer="defer"></script>
+
+    {%- if request.page_type contains 'customers/' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {% if request.design_mode %}
+      <script src="https://api.archetypethemes.co/design-mode.js" defer="defer"></script>
+    {% endif %}
+    {% render 'rapid-search-settings' %}
+
+    {{ shop.metafields.loox.global_html_head }}
+    {% render 'edt_p' %}
+    {% render 'gsf-conversion-pixels' %}
+
+    {% include 'hulk_po_vd.liquid' %}
+    {% if handle contains '-kmnx-vt-' %}
+      <meta name="robots" content="noindex">
+    {% endif %}
+  </head>
+
+  <body
+    class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}"
+    data-center-text="{{ settings.type_body_align_text }}"
+    data-button_style="{{ settings.button_style }}"
+    data-type_header_capitalize="{{ settings.type_header_capitalize }}"
+    data-type_headers_align_text="{{ settings.type_headers_align_text }}"
+    data-type_product_capitalize="{{ settings.type_product_capitalize }}"
+    data-swatch_style="{{ settings.swatch_style }}"
+    {% if settings.disable_animations %}
+      data-disable-animations="true"
+    {% endif %}
+  >
+    <a class="in-page-link visually-hidden skip-link" href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
+
+    <div id="PageContainer" class="page-container">
+      <div class="transition-body">
+        {% unless page.handle == 'helloweenads' or page.handle == 'christmasads' %}
+          {%- sections 'header-group' -%}
+        {% endunless %}
+        {%- sections 'popup-group' -%}
+
+        <main class="main-content" id="MainContent">
+          {{ content_for_layout }}
+        </main>
+        {% unless page.handle == 'helloweenads' or page.handle == 'christmasads' %}
+          {%- sections 'footer-group' -%}
+        {% endunless %}
+      </div>
+    </div>
+
+    {%- liquid
+      render 'video-modal'
+      render 'photoswipe-template'
+      render 'tool-tip'
+    -%}
+
+    {% comment %} Image markup used when building product grid item via JS {% endcomment %}
+    <template id="naturalImageMarkup">
+      <div class="image-wrap" style="height: 0;">
+        <image-element data-aos="image-fade-in">
+          <img class="grid-product__image" width height src srcset loading="lazy" alt>
+        </image-element>
+      </div>
+    </template>
+    <template id="fixedRatioImageMarkup">
+      <div class="grid__image-ratio">
+        <image-element data-aos="image-fade-in">
+          <img width height src srcset loading="lazy" alt>
+        </image-element>
+      </div>
+    </template>
+
+    {%- render 'cro-express-pay' -%}
+
+    {{ shop.metafields.loox.global_html_body }}
+    {% include 'swymSnippet' %}
+
+    {% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+    {% render 'globo.preorder.custom' %}
+  </body>
+</html>
+
+<div id="kimonix_none_display_description_fix_variation_tests" style="display: none;">{{ collection.description }}</div>
+
+{% if content_for_header contains 'kimonix_void_script' %}
+  <script
+    async
+    id="kimonix_elements_script"
+    src="https://api.kimonix.com/kimonix_elements.js?shop=ornamentallyyou.myshopify.com"
+  ></script>
+{% endif %}
+
+<script>
+  window.ALBSS = {
+    event_key: 'a86095bb-002b-46a7-b9d6-e0e7ee36b895'
+  };
+</script>
+<script src="https://c.albss.com/p/l/loader.iife.js" async></script>

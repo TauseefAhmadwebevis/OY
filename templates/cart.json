@@ -1,0 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {}
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "1687416285ae25c7de": {
+      "type": "apps",
+      "blocks": {
+        "9c037ecf-001e-497e-8fec-ffa0ae78c062": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "65619",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "9c037ecf-001e-497e-8fec-ffa0ae78c062"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1716718825122a79e2": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_fanzYa": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_fanzYa"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recently-viewed",
+    "1687416285ae25c7de",
+    "1716718825122a79e2"
+  ]
+}

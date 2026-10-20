@@ -1,0 +1,411 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "loox-rating": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": true,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_JpCfUJ": {
+          "type": "custom",
+          "settings": {
+            "code": "<style>\n.pdp-customer-satisfaction {\ndisplay: flex; a\nlign-items: center;\ngap: 5px;\n}\n@media (max-width: 1024px)  {\n .pdp-customer-satisfaction p {\n    font-size: 13px;\n }\n}\n@media (max-width: 1023px)  {\n .pdp-customer-satisfaction {\njustify-content: center;\n}\n}\n@media (max-width: 810px)  {\n .pdp-customer-satisfaction p {\n    font-size: 12px;\n }\n}\n@media (max-width: 768px)  {\n .pdp-customer-satisfaction p {\n    font-size: 14px;\n }\n}\n</style>\n\n<div class=\"pdp-customer-satisfaction\" style=\"\">\n<img \nstyle=\"width: 25px; height: 25px;\" src=\"https://cdn.shopify.com/s/files/1/0427/9857/9867/files/icon-100.png?v=1731966019\" />\n<p style=\"margin: 0; \">Customer Satisfaction Guaranteed </p>\n\n</div>"
+          }
+        },
+        "d6b0e2bd-2728-4640-8e4b-fd770fab537d": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "ribbon",
+            "text": "{{ product.metafields.my_fields.made_in_the_USA.value }}"
+          }
+        },
+        "65afcf7d-3dc8-4fa3-b2ca-2cfa362c122d": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "gift",
+            "text": "{{ product.metafields.my_fields.gift_pouch_included.value }}"
+          }
+        },
+        "ee7e97b1-5d65-43db-b2cb-580ab59ee7e7": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "heart",
+            "text": "{{ product.metafields.custom.custom_metafield.value }}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "aa6426e3-3437-403e-9781-c5f0e5be8509": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "44449",
+            "product_id_enabled": true,
+            "collection_id_enabled": true
+          }
+        },
+        "f90c7a1d-a4cd-4749-a3c1-10f885ea75bd": {
+          "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_page/7411210d-7b32-4c09-9455-e129e3be4729",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "9e7e939c-e0eb-4097-925a-c5d9e5c6669d": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false
+          }
+        },
+        "custom_TftRfp": {
+          "type": "custom",
+          "settings": {
+            "code": "<style>\n.pdp-trust-badge {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n}\n.pdp-trust-badge span {\n    font-size: 14px;\n    color: #2F3033;\n    font-weight: 600;\n}\n</style>\n\n<div class=\"pdp-trust-badge\">\n<svg width=\"17\" height=\"19\" viewBox=\"0 0 17 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M8.30721 19C9.01627e-05 13.0821 8.90696e-05 3.7686 8.90696e-05 3.7686C2.94776 3.14773 5.72785 1.90147 8.15255 0.114015L8.30722 1.19905e-06C10.4141 1.65671 12.8434 2.85573 15.4399 3.52046L16.4092 3.7686C16.4092 3.7686 16.4092 13.0821 8.30721 19Z\" fill=\"#BC403A\"/>\n<path d=\"M4.02637 6.69479C3.99917 6.4617 3.98228 6.26355 3.97178 6.10769C5.51628 5.71517 6.97145 5.02899 8.25753 4.08609C9.45975 4.99956 10.8302 5.66979 12.292 6.05765L12.4386 6.09654C12.4284 6.25436 12.4117 6.45689 12.3845 6.6962C12.3137 7.31847 12.1718 8.18563 11.8882 9.15972C11.3454 11.0237 10.2937 13.2463 8.26004 14.9126C6.17019 13.2446 5.0912 11.0199 4.53487 9.15646C4.24424 8.18303 4.0989 7.3165 4.02637 6.69479Z\" fill=\"#BC403A\" stroke=\"white\"/>\n</svg>\n<span>\n100% SAFE AND SECURE CHECKOUT\n</span>\n</div>"
+          }
+        },
+        "7fc9919a-8494-41ff-b0eb-3a1d153c7424": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "trust_image": "shopify://shop_images/PDP-Buy-X-Get-Y-Off-02.png"
+          }
+        },
+        "0a4c6d3b-6f08-4da9-bedf-bca295f61202": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "disabled": true,
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "theme": "light",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "7cf7c768-b50b-4323-9cdd-629baf69dbf0": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Shipping information",
+            "content": "",
+            "page": "shipping-information-rates"
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "disabled": true,
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {}
+        },
+        "3ffb3b8f-22d6-4ac3-ab04-634d1554a4a7": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "layout": "horizontal",
+            "alignment": "fillContainer",
+            "scheme-type": "default",
+            "review-title": "Reviews | Verified Top Rated Shop ☑️",
+            "rating-icon": true,
+            "average-rating": true,
+            "loox-branding": true,
+            "review-count": true,
+            "open-reviews": true,
+            "show-border": true,
+            "border-radius": 8,
+            "font-size": 14,
+            "background-color": "",
+            "secondary-background-color": "",
+            "text-color": "",
+            "rating-icon-color": "",
+            "border-color": "#25564e"
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "loox-rating",
+        "separator",
+        "custom_JpCfUJ",
+        "d6b0e2bd-2728-4640-8e4b-fd770fab537d",
+        "65afcf7d-3dc8-4fa3-b2ca-2cfa362c122d",
+        "ee7e97b1-5d65-43db-b2cb-580ab59ee7e7",
+        "variant_picker",
+        "aa6426e3-3437-403e-9781-c5f0e5be8509",
+        "f90c7a1d-a4cd-4749-a3c1-10f885ea75bd",
+        "9e7e939c-e0eb-4097-925a-c5d9e5c6669d",
+        "buy_buttons",
+        "custom_TftRfp",
+        "7fc9919a-8494-41ff-b0eb-3a1d153c7424",
+        "0a4c6d3b-6f08-4da9-bedf-bca295f61202",
+        "7cf7c768-b50b-4323-9cdd-629baf69dbf0",
+        "description",
+        "tab",
+        "contact",
+        "share",
+        "3ffb3b8f-22d6-4ac3-ab04-634d1554a4a7"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "large",
+        "product_zoom_enable": true,
+        "thumbnail_position": "below",
+        "thumbnail_height": "fixed",
+        "thumbnail_arrows": true,
+        "mobile_layout": "full",
+        "enable_video_looping": true,
+        "product_video_style": "unmuted"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "Impressive",
+        "title": "About your brand",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": false,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
+    "text-and-image": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "About your brand",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "text-and-image2": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "About your brand",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "17558108957cfa2907": {
+      "type": "apps",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "apps_XjCRBY": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_WW346X": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "176322",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_WW346X"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "17315430430b5fc392": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_kRxcDV": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "176296",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_kRxcDV"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1725148994bfcf0bbd": {
+      "type": "apps",
+      "blocks": {
+        "rebuy_personalization_engine_rebuy_widget_fMCYeB": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "166796",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "rebuy_personalization_engine_rebuy_widget_fMCYeB"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "Frequently Bought Together",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "loox-product-reviews-app-section": {
+      "type": "apps",
+      "blocks": {
+        "loox-product-reviews": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox-product-reviews"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "background-image-text",
+    "text-and-image",
+    "text-and-image2",
+    "17558108957cfa2907",
+    "apps_XjCRBY",
+    "17315430430b5fc392",
+    "1725148994bfcf0bbd",
+    "product-recommendations",
+    "recently-viewed",
+    "loox-product-reviews-app-section",
+    "collection-return"
+  ]
+}

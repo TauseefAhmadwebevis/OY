@@ -1,0 +1,45 @@
+{% if section.settings.padding_top != 0 or section.settings.padding_bottom != 0 or section.settings.bg_color != blank %}
+  {%- style -%}
+    .section-{{ section.id }} {
+    {% if section.settings.bg_color != blank %}
+      background-color:{{section.settings.bg_color}};
+    {% endif %}
+    {% if section.settings.padding_top != 0 %}
+      padding-top: {{ section.settings.padding_top }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom != 0 %}
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% endif %}
+    }
+    @media screen and (max-width: 991px) {
+    .section-{{ section.id }} {
+    {% if section.settings.padding_top != 0 %}
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom != 0 %}
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% endif %}
+    }
+    }
+    @media screen and (max-width: 768px) {
+    .section-{{ section.id }} {
+    {% if section.settings.padding_top != 0 %}
+      padding-top: {{ section.settings.padding_top | times: 0.65 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom != 0 %}
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.65 | round: 0 }}px;
+    {% endif %}
+    }
+    }
+    @media screen and (max-width: 480px) {
+    .section-{{ section.id }} {
+    {% if section.settings.padding_top != 0 %}
+      padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom != 0 %}
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+    {% endif %}
+    }
+    }
+  {%- endstyle -%}
+{% endif %}

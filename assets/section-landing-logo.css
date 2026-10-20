@@ -1,0 +1,21 @@
+.section-landing-logo__inner {
+    padding: 9px;
+    text-align: center;
+}
+.section-landing-logo__image {
+    margin: 0 auto;
+    display: block;
+}
+@media (min-width: 576px) {
+    .section-landing-logo__image .mobile {
+        display: none;
+    }
+}
+@media (max-width: 575px) {
+    .section-landing-logo__inner {
+        padding: 8px;
+    }
+    .section-landing-logo__image .desktop:has(+ .mobile) {
+        display: none;
+    }
+}

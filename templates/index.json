@@ -1,0 +1,877 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "image_LwcXtr": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/fall-collection-old-ae5aed",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Autumn_Desktop_Banner_2026_1.png",
+            "image_mobile": "shopify://shop_images/Autumn_Mobile_Banner_2026_1.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_yBEJ3n": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/halloween-decor",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Halloween_Desktop_Banner_2026_-_02_1.png",
+            "image_mobile": "shopify://shop_images/Halloween_Mobile_Banner_2026_-_02.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_9j8Cxk": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/halloween-themed-tees",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Ornamentally_You_Website_Banner_Halloween_Sept2026_Tshirt_1920x600_3927bcea-9e61-45cb-b6ef-68d8a969e899.png",
+            "image_mobile": "shopify://shop_images/Ornamentally_You_Website_Banner_Halloween_Sept2026_Tshirt_1920x600_3927bcea-9e61-45cb-b6ef-68d8a969e899.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_xhXCrz": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/halloween-decor",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/September-Poe-Desktop-Bannerr_fe3ffeaa-828c-43bd-97b9-a5ce635bcaa2.png",
+            "image_mobile": "shopify://shop_images/September-Poe-Mobile-Bannerr.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "6a68fb27-bd1b-4187-af98-2cc817b9dfe5": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections",
+            "link_text": "",
+            "link_2": "shopify://collections",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Social-Proof-2024-Desktop-Banner_9978c371-bb53-40c7-876c-b2a14903c8e4.png",
+            "image_mobile": "shopify://shop_images/Social-Proof-2024--Mobile-Banner_7c5e7795-ce96-40f7-8120-30be8c4eb913.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_LwcXtr",
+        "image_yBEJ3n",
+        "image_9j8Cxk",
+        "image_xhXCrz",
+        "6a68fb27-bd1b-4187-af98-2cc817b9dfe5"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "300px",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "b2e1398b-4d6c-480a-a169-6ceb4f334c05": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16739649323236__b2e1398b-4d6c-480a-a169-6ceb4f334c05-image-1": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Featured-In-Banner-Website.png",
+            "image_mobile": "shopify://shop_images/Featured-in-Banner-Mobile.png",
+            "parallax_direction": "left",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649323236__b2e1398b-4d6c-480a-a169-6ceb4f334c05-image-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "16911103133d2e4573": {
+      "type": "apps",
+      "blocks": {
+        "33870881-fd37-480f-b1b9-0cdb6f3e7656": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "47362",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "33870881-fd37-480f-b1b9-0cdb6f3e7656"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "01547b4c-8e60-4596-bc9f-183fd21099c7": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "text": "⚠️ Many Items Sell Out for Good - Limited Quantity ⏳",
+        "link": "shopify://collections/all",
+        "text_size": 20,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 240
+      }
+    },
+    "rich_text_JcnrEy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_XqMFzH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Over 7,000 5-Star Reviews ★★★★★ 150,000+ Happy Customers</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_XqMFzH"
+      ],
+      "custom_css": [
+        ".rte p {font-family: \"Tenor Sans\", sans-serif;}",
+        "@media only screen and (max-width: 767px) {.rte p {font-size: 17px; }}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "16884837732807e9a2": {
+      "type": "apps",
+      "blocks": {
+        "102c7408-d2cb-482e-8574-7eb01bad0d72": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "layout": "horizontal",
+            "alignment": "fillContainer",
+            "scheme-type": "default",
+            "review-title": "Reviews | Top Rated Online Store",
+            "rating-icon": true,
+            "average-rating": true,
+            "loox-branding": true,
+            "review-count": true,
+            "open-reviews": true,
+            "show-border": true,
+            "border-radius": 8,
+            "font-size": 16,
+            "background-color": "",
+            "secondary-background-color": "",
+            "text-color": "",
+            "rating-icon-color": "",
+            "border-color": "#25564e"
+          }
+        }
+      },
+      "block_order": [
+        "102c7408-d2cb-482e-8574-7eb01bad0d72"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Summer Fun Begins Here!☀️🌴🏖️",
+        "home_featured_products": "summer-collection",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "9a1e43a2-b7ad-4354-9790-d4e0a2ca1f54": {
+          "type": "collection",
+          "settings": {
+            "collection": "t-shirts",
+            "title": "T-Shirts",
+            "focal_point": "center center"
+          }
+        },
+        "featured-collections-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "sweatshirt",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "f65732f5-1cb2-4eec-8e8a-aa399791a04d": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-t-shirts",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "f20b4b6c-6e3f-4c1d-bf32-650d281a49b4": {
+          "type": "collection",
+          "settings": {
+            "collection": "tote-bags-collection",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "featured-collections-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "tumbler-1",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "ae3583cf-4c0d-4ee4-86df-c40b2ee289f4": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-ceramic-mug",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "e1eaf282-dd08-4b8e-a25c-72511fbeb091": {
+          "type": "collection",
+          "settings": {
+            "collection": "ceramic-ornaments",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "featured-collections-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "decorative-statues",
+            "title": "",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "9a1e43a2-b7ad-4354-9790-d4e0a2ca1f54",
+        "featured-collections-2",
+        "f65732f5-1cb2-4eec-8e8a-aa399791a04d",
+        "f20b4b6c-6e3f-4c1d-bf32-650d281a49b4",
+        "featured-collections-1",
+        "ae3583cf-4c0d-4ee4-86df-c40b2ee289f4",
+        "e1eaf282-dd08-4b8e-a25c-72511fbeb091",
+        "featured-collections-0"
+      ],
+      "custom_css": [
+        ".index-section {display: none;}",
+        "@media only screen and (max-width: 768px) {.index-section {display: block; }}"
+      ],
+      "settings": {
+        "title": "Popular Store Collections",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    },
+    "featured_collection_y76TGc": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Releases 2026 🥳",
+        "home_featured_products": "2026-new-releases-1",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured_collections_AT9Aym": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_gmnh7Q": {
+          "type": "collection",
+          "settings": {
+            "collection": "t-shirts",
+            "title": "T-Shirts",
+            "focal_point": "center center"
+          }
+        },
+        "collection_eLqDzm": {
+          "type": "collection",
+          "settings": {
+            "collection": "sweatshirt",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_FGYDCn": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-t-shirts",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_ewLJcC": {
+          "type": "collection",
+          "settings": {
+            "collection": "tote-bags-collection",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_Lirfwi": {
+          "type": "collection",
+          "settings": {
+            "collection": "personalized-ceramic-mug",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_JfJfDi": {
+          "type": "collection",
+          "settings": {
+            "collection": "tumbler-1",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_HaEkfe": {
+          "type": "collection",
+          "settings": {
+            "collection": "decorative-statues",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_YRGM9q": {
+          "type": "collection",
+          "settings": {
+            "collection": "ceramic-ornaments",
+            "title": "Ceramic Ornaments",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "collection_gmnh7Q",
+        "collection_eLqDzm",
+        "collection_FGYDCn",
+        "collection_ewLJcC",
+        "collection_Lirfwi",
+        "collection_JfJfDi",
+        "collection_HaEkfe",
+        "collection_YRGM9q"
+      ],
+      "custom_css": [
+        ".index-section {display: block;}",
+        "@media only screen and (max-width: 768px) {.index-section {display: none; }}"
+      ],
+      "settings": {
+        "title": "Popular Store Collections",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    },
+    "featured_collection_kY3KVQ": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Garden Magic Collection 🍄",
+        "home_featured_products": "decorative-statues",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "29d3181d-741c-4284-a2c4-c076c01ca3c1": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "USA Semiquincentennial 250th Anniversary Memorabilia",
+        "home_featured_products": "patriotic-themed-items",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "0cd11a86-2f2e-4dab-b6f9-a4877f7e8326": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Explore Our Plush & Crochet Collection!",
+        "home_featured_products": "plush-and-crochet-toys-1",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "promo-grid": {
+      "type": "promo-grid",
+      "blocks": {
+        "promo-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Newly Released Wreaths",
+            "textarea": "Limited Quantity Carried",
+            "cta_text1": "Shop This",
+            "cta_link1": "shopify://collections/wreaths",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/pebblely_5.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 720,
+            "text_size": 105,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#25564e",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "promo-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Just in: Gnomes!",
+            "textarea": "Get them while they last!",
+            "cta_text1": "Shop This",
+            "cta_link1": "shopify://collections/everything-gnomes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/for_product_Handcrafted_Bee_and_Ladybug_Gnomes_Plush_Bumblebee_Bug_Craft_Theme_1.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 720,
+            "text_size": 105,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#25564e",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "promo-0",
+        "promo-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    },
+    "promo-grid2": {
+      "type": "promo-grid",
+      "blocks": {
+        "eb2afa4c-2145-4828-95b1-d116d39bb3c1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Homemade Luxury Tree Skirts",
+            "textarea": "You can only find them here",
+            "cta_text1": "Make Your Tree Stand Out!",
+            "cta_link1": "shopify://collections/tree-skirts",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Gift_Box-02_Scandinavian_Forest_Animal_Pattern_Tree_Skirt.png",
+            "video_url": "",
+            "width": "50",
+            "height": 720,
+            "text_size": 80,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#cc3333",
+            "boxed": true,
+            "framed": true
+          }
+        },
+        "7fd279fc-2c61-4864-b24a-b3607e40cf17": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Blown Glass Ornament Line",
+            "textarea": "",
+            "cta_text1": "Make your tradition special",
+            "cta_link1": "shopify://collections/glass-ornaments-old-e5f258",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/For_Product-01_Monarch_Butterfly_Glass_Christmas_Ornament_Jingle_Brunches_Beige_Background_Christmas_Backgraund_1.png",
+            "video_url": "",
+            "width": "50",
+            "height": 600,
+            "text_size": 80,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#cc3333",
+            "boxed": true,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "eb2afa4c-2145-4828-95b1-d116d39bb3c1",
+        "7fd279fc-2c61-4864-b24a-b3607e40cf17"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Our hearts are in our products and our products are in our hearts. It's cliche, but we guarantee satisfaction. We can write for pages what we stand for, as most companies do, but here we want to list out what we do NOT stand for.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "5ae15390-8dc1-4bde-9a8c-d7ae5ce267c8": {
+      "type": "hotspots",
+      "blocks": {
+        "template--16739649323236__5ae15390-8dc1-4bde-9a8c-d7ae5ce267c8-1686028906ffdabb1e-0": {
+          "type": "product",
+          "settings": {
+            "featured_product": "bee-and-honey-themed-gnomes-plush-bumblebee-home-decor",
+            "vertical": 52,
+            "horizontal": 44
+          }
+        },
+        "template--16739649323236__5ae15390-8dc1-4bde-9a8c-d7ae5ce267c8-1686028906ffdabb1e-1": {
+          "type": "product",
+          "settings": {
+            "featured_product": "24-red-and-white-ornament-balls-assorted-christmas-glitter-baubles",
+            "vertical": 75,
+            "horizontal": 65
+          }
+        },
+        "d08d4ed5-526a-44a6-a300-131623eab0bd": {
+          "type": "product",
+          "settings": {
+            "featured_product": "artistic-new-york-state-themes-and-landmarks-christmas-ornament",
+            "vertical": 71,
+            "horizontal": 38
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649323236__5ae15390-8dc1-4bde-9a8c-d7ae5ce267c8-1686028906ffdabb1e-0",
+        "template--16739649323236__5ae15390-8dc1-4bde-9a8c-d7ae5ce267c8-1686028906ffdabb1e-1",
+        "d08d4ed5-526a-44a6-a300-131623eab0bd"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Shop the look",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "image": "shopify://shop_images/Fall_Wonderland_Group_Banner.png",
+        "indent_image": false,
+        "image_position": "left",
+        "hotspot_style": "bag",
+        "hotspot_color": "#000000",
+        "lazyload_images": true
+      }
+    },
+    "f63fae85-33c5-4e49-bb22-dc16cb04db40": {
+      "type": "countdown",
+      "blocks": {
+        "template--16739649323236__f63fae85-33c5-4e49-bb22-dc16cb04db40-1686029152d044c2c0-0": {
+          "type": "content",
+          "settings": {
+            "heading": "SPRING SALE",
+            "heading_size": "h2",
+            "text": "",
+            "content_alignment": "left"
+          }
+        },
+        "template--16739649323236__f63fae85-33c5-4e49-bb22-dc16cb04db40-1686029152d044c2c0-1": {
+          "type": "timer",
+          "settings": {
+            "year": "2025",
+            "month": "01",
+            "day": "1",
+            "hour": "03",
+            "minute": "00",
+            "hide_timer": false,
+            "text": ""
+          }
+        },
+        "template--16739649323236__f63fae85-33c5-4e49-bb22-dc16cb04db40-1686029152d044c2c0-2": {
+          "type": "button",
+          "settings": {
+            "button_link": "",
+            "button": "Shop Collection",
+            "button_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649323236__f63fae85-33c5-4e49-bb22-dc16cb04db40-1686029152d044c2c0-0",
+        "template--16739649323236__f63fae85-33c5-4e49-bb22-dc16cb04db40-1686029152d044c2c0-1",
+        "template--16739649323236__f63fae85-33c5-4e49-bb22-dc16cb04db40-1686029152d044c2c0-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "banner",
+        "full_width": true,
+        "text_color": "#ffffff",
+        "background_color": "#ffffff",
+        "background_image": "shopify://shop_images/Spring_Sale_40_off_Personalized_Ornaments_Banner.png",
+        "overlay_color": "#000000",
+        "overlay_opacity": 52,
+        "lazyload_images": true
+      }
+    },
+    "ad48dacb-c805-4a5a-ad08-86ab3a2fb63c": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/For_Product-02_White_Gift_Box_with_Red_Bow_White_Background_Gold_Red_Star-02.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Giving a Gift? 🎁",
+        "text": "<p>Our gift box makes the perfect presentation for our small ornaments. <br/><br/><em>⭐️ </em><a href=\"/products/white-gift-box-with-red-bow\" title=\"White Gift Box with Red Bow\"><em>Limited stock available</em></a></p>",
+        "button_label": "Shop It Now",
+        "button_link": "shopify://products/white-gift-box-with-red-bow",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "2014f233-828b-48c6-9028-174f0925f386": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--16739649323236__2014f233-828b-48c6-9028-174f0925f386-1685819015be44b0e4-0": {
+          "type": "text_block",
+          "settings": {
+            "icon": "truck",
+            "title": "FREE SHIPPING",
+            "text": "<p>Get hassle free doorstep delivery on U.S. order above $30 your purchases.</p>"
+          }
+        },
+        "template--16739649323236__2014f233-828b-48c6-9028-174f0925f386-1685819015be44b0e4-1": {
+          "type": "text_block",
+          "settings": {
+            "icon": "shield",
+            "title": "ORDER PROTECTION",
+            "text": "<p>We guarantee qualified purchases, safe transactions and easy returns.</p>"
+          }
+        },
+        "template--16739649323236__2014f233-828b-48c6-9028-174f0925f386-1685819015be44b0e4-2": {
+          "type": "text_block",
+          "settings": {
+            "icon": "recycle",
+            "title": "Easy Return",
+            "text": "<p>Easy Returns when received a defected product</p>"
+          }
+        },
+        "46757b65-dc30-44e7-86d2-c965094c6009": {
+          "type": "text_block",
+          "settings": {
+            "icon": "phone",
+            "title": "CUSTOMER SUPPORT",
+            "text": "<p>Our support team provide best services to our customers for getting a best product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649323236__2014f233-828b-48c6-9028-174f0925f386-1685819015be44b0e4-0",
+        "template--16739649323236__2014f233-828b-48c6-9028-174f0925f386-1685819015be44b0e4-1",
+        "template--16739649323236__2014f233-828b-48c6-9028-174f0925f386-1685819015be44b0e4-2",
+        "46757b65-dc30-44e7-86d2-c965094c6009"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "desktop_columns_per_row": 4,
+        "icon_color": "#000000",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
+      }
+    },
+    "2a33cc46-60af-44cd-bbaa-ba676b4bb9a1": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Crafted Just for Your Sips!",
+        "home_featured_products": "personalized-ceramic-mug",
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "56f8be14-9924-4e21-a6a2-2f53030a62c5": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16739649323236__56f8be14-9924-4e21-a6a2-2f53030a62c5-168866452174c20cc5-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Homepage_Blog_Introduction_Banner_bf31ece6-7b4c-4468-9d7e-0def3d4eecc1.png",
+            "link": "https://ornamentallyyou.com/a/blog",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739649323236__56f8be14-9924-4e21-a6a2-2f53030a62c5-168866452174c20cc5-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "17831420368544217b": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "slideshow",
+    "b2e1398b-4d6c-480a-a169-6ceb4f334c05",
+    "16911103133d2e4573",
+    "01547b4c-8e60-4596-bc9f-183fd21099c7",
+    "rich_text_JcnrEy",
+    "16884837732807e9a2",
+    "featured-collection",
+    "featured-collections",
+    "featured_collection_y76TGc",
+    "featured_collections_AT9Aym",
+    "featured_collection_kY3KVQ",
+    "29d3181d-741c-4284-a2c4-c076c01ca3c1",
+    "0cd11a86-2f2e-4dab-b6f9-a4877f7e8326",
+    "promo-grid",
+    "promo-grid2",
+    "rich-text",
+    "5ae15390-8dc1-4bde-9a8c-d7ae5ce267c8",
+    "f63fae85-33c5-4e49-bb22-dc16cb04db40",
+    "ad48dacb-c805-4a5a-ad08-86ab3a2fb63c",
+    "2014f233-828b-48c6-9028-174f0925f386",
+    "2a33cc46-60af-44cd-bbaa-ba676b4bb9a1",
+    "56f8be14-9924-4e21-a6a2-2f53030a62c5",
+    "17831420368544217b"
+  ]
+}

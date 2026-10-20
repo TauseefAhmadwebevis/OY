@@ -1,0 +1,129 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "settings": {
+        "ct-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "ct-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "Memorial-Themed-Ornaments-collection-desktop-banner": "shopify://shop_images/Christmas_in_July_NEW_Collection_Banner_2026.png",
+        "Memorial-Themed-Ornaments-collection-mobile-banner": "shopify://shop_images/Christmas_in_July_NEW_Mobile_Banner_2026-02_1.png",
+        "halloween-decor-desktop-banner": "shopify://shop_images/Ornamentally_You_Website_Banner_Halloween_Sept2026_Ornaments_1920x600_9ab0a7c5-f94f-4271-9638-5cbc04012fd0.png",
+        "halloween-decor-mobile-banner": "shopify://shop_images/Ornamentally_You_Website_Banner_Halloween_Sept2026_Ornaments_750x1000_684a5075-b291-4643-a0e8-e4d8ca2f2af4.png",
+        "desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "dad-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "dad-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "patriotic-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "patriotic-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "inspirational-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "inspirational-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "travel-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "travel-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "halloween-desktop-banner": "shopify://shop_images/Ornamentally_You_Website_Banner_Halloween_Sept2026_Tshirt_1920x600_3927bcea-9e61-45cb-b6ef-68d8a969e899.png",
+        "halloween-mobile-banner": "shopify://shop_images/Ornamentally_You_Website_Banner_Halloween_Sept2026_Tshirt_750x1000_02537fa0-8d0d-458a-8702-2027720a864e.png",
+        "humor-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "humor-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "family-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "family-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "christmas-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "christmas-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "glass-desktop-banner": "shopify://shop_images/image_22_f936c80b-42ac-4bb1-8639-89aadde18a82.png",
+        "glass-mobile-banner": "shopify://shop_images/Christmas_in_July_NEW_Mobile_Banner_2026-02_1.png",
+        "christmasDecor-desktop-banner": "shopify://shop_images/image_22.png",
+        "christmasDecor-mobile-banner": "shopify://shop_images/Christmas_in_July_NEW_Mobile_Banner_2026-02_1.png",
+        "christmasOrnaments-desktop-banner": "shopify://shop_images/image_22_f936c80b-42ac-4bb1-8639-89aadde18a82.png",
+        "christmasOrnaments-mobile-banner": "shopify://shop_images/Christmas_in_July_NEW_Mobile_Banner_2026-02_1.png",
+        "valentines-themed-items-desktop-banner": "shopify://shop_images/Christmas_in_July_NEW_Collection_Banner_2026.png",
+        "valentines-themed-items-mobile-banner": "shopify://shop_images/Christmas_in_July_NEW_Mobile_Banner_2026-02_1.png",
+        "valentines-themed-tees-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "valentines-themed-tees-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "valentines-themed-mugs-desktop-banner": "shopify://shop_images/Banner-3--Mugs-v2.png",
+        "valentines-themed-mugs-mobile-banner": "shopify://shop_images/Banner-3--Mugs-v2.png",
+        "valentine-candles-desktop-banner": "shopify://shop_images/Banner-2--All-valentine-products.png",
+        "valentine-candles-mobile-banner": "shopify://shop_images/Banner-2--All-valentine-products.png",
+        "the-modern-protest-collection-desktop-banner": "shopify://shop_images/Ornamentally_You_Banners_T-shirt-Totebags_February2026.png",
+        "the-modern-protest-collection-mobile-banner": "shopify://shop_images/Ornamentally_You_Banners_T-shirt-Totebags_February2026.png",
+        "tote-bags-collection-desktop-banner": "shopify://shop_images/Ornamentally-You_-Banners_T-shirt-Totebags_February2026-2.png",
+        "tote-bags-collection-mobile-banner": "shopify://shop_images/Ornamentally-You_-Banners_T-shirt-Totebags_February2026-2.png",
+        "st-patricks-day-collection-desktop-banner": "shopify://shop_images/Static_Concept_Month2026.png",
+        "st-patricks-day-collection-mobile-banner": "shopify://shop_images/Static_Concept_Month2026-mobiel.png",
+        "easter-tote-bags-collection-desktop-banner": "shopify://shop_images/Ornamentally-You_-Banners_T-shirt-Totebags_February2026-2.png",
+        "easter-tote-bags-collection-mobile-banner": "shopify://shop_images/Ornamentally-You_-Banners_T-shirt-Totebags_February2026-2.png",
+        "easter-tees-collection-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V1_1920x450_6ec6839b-6bea-4e08-96e7-22cc8ebe2356.png",
+        "easter-tees-collection-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "dad-themed-tees-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "dad-themed-tees-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "soccer-championship-t-shirt-desktop-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "soccer-championship-t-shirt-mobile-banner": "shopify://shop_images/Banner-1_Offer-Banners-per-Product-Collection_10-07-2025_V2_1920x450_f33a9f4a-5ce2-4436-855b-a07819096d42.png",
+        "enable": true,
+        "collection_image_enable": false,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "enable_collection_count": true,
+            "per_row": 4,
+            "rows_per_page": 7,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "product_grid"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "collapsed": true,
+        "filter_style": "sidebar",
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    },
+    "1687410536dbc38596": {
+      "type": "apps",
+      "blocks": {
+        "55c2cc5b-6ab1-4079-a988-94c3e6bf0ce5": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "45237",
+            "product_id_enabled": true,
+            "collection_id_enabled": true
+          }
+        }
+      },
+      "block_order": [
+        "55c2cc5b-6ab1-4079-a988-94c3e6bf0ce5"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "main-collection",
+    "1687410536dbc38596"
+  ]
+}

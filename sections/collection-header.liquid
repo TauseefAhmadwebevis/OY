@@ -1,0 +1,1005 @@
+{%- assign disable_sticky_header = false -%}
+
+{%- if section.settings.enable -%}
+  {%- if section.settings.collection_image_enable and collection.image -%}
+    <div
+      id="CollectionHeaderSection"
+      data-section-id="{{ section.id }}"
+      data-section-type="collection-header"
+      {% if section.settings.parallax %}
+        data-parallax="true"
+      {% endif %}
+    >
+      <div class="collection-hero">
+        {%- if section.settings.parallax -%}
+          <parallax-image class="parallax-container">
+            <div
+              class="parallax-image"
+              data-movement="15%"
+              data-parallax-image
+              data-angle="{{ section.settings.parallax_direction }}"
+            >
+        {%- endif -%}
+        {%- render 'image-element',
+          img: collection.image,
+          img_width: 2400,
+          classes: 'collection-hero__image image-fit',
+          preload: true,
+          loading: 'eager'
+        -%}
+        {%- if section.settings.parallax -%}
+          </div>
+          </parallax-image>
+        {%- endif -%}
+        <div class="collection-hero__content">
+          <div class="page-width">
+            <header class="section-header section-header--hero">
+              <div class="section-header__shadow">
+                {%- render 'breadcrumbs' -%}
+                <h1 class="section-header__title">
+                  {{ collection.title }}
+                </h1>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- else -%}
+    {%- assign disable_sticky_header = true -%}
+    {% if collection.title contains 'Mother' %}
+      {% if section.settings['desktop-banner'] != blank or section.settings['mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+    
+    {% elsif collection.title contains 'Patriotic T-Shirts' %}  
+      {% if section.settings['patriotic-desktop-banner'] != blank or section.settings['patriotic-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.patriotic-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.patriotic-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+    {% elsif collection.title contains 'Inspirational Tees' %}  
+      {% if section.settings['inspirational-desktop-banner'] != blank or section.settings['inspirational-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.inspirational-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.inspirational-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+    
+    {% elsif collection.title contains 'Travel Themed Shirts' %}  
+      {% if section.settings['travel-desktop-banner'] != blank or section.settings['travel-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.travel-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.travel-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+    {% elsif collection.title contains 'Halloween Themed Tees' %}  
+      {% if section.settings['halloween-desktop-banner'] != blank or section.settings['halloween-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.halloween-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.halloween-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+    
+      {% elsif collection.title contains 'Humor to a Tee' %}  
+      {% if section.settings['humor-desktop-banner'] != blank or section.settings['humor-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.humor-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.humor-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+    
+    {% elsif collection.title contains 'Family Christmas Tees' %}  
+      {% if section.settings['family-desktop-banner'] != blank or section.settings['family-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.family-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.family-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+      {% elsif collection.title contains 'Christmas Tees' %}  
+      {% if section.settings['christmas-desktop-banner'] != blank or section.settings['christmas-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.christmas-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.christmas-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+      {% elsif collection.title contains 'Glass Ornaments' %}  
+      {% if section.settings['glass-desktop-banner'] != blank or section.settings['glass-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.glass-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.glass-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+      {% elsif collection.title contains 'Christmas Decor' %}  
+      {% if section.settings['christmasDecor-desktop-banner'] != blank or section.settings['christmasDecor-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.christmasDecor-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.christmasDecor-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+      {% elsif collection.title contains 'All Christmas Themed Ornaments' %}  
+      {% if section.settings['christmasOrnaments-desktop-banner'] != blank or section.settings['christmasOrnaments-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.christmasOrnaments-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.christmasOrnaments-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+      {% elsif collection.title contains 'Valentines Themed Items' %}  
+      {% if section.settings['valentines-themed-items-desktop-banner'] != blank or section.settings['valentines-themed-items-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.valentines-themed-items-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.valentines-themed-items-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+            {% elsif collection.title contains 'Valentines Themed Tees' %}  
+      {% if section.settings['valentines-themed-tees-desktop-banner'] != blank or section.settings['valentines-themed-tees-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.valentines-themed-tees-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.valentines-themed-tees-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+        {% elsif collection.title contains "Valentine's Themed Mugs" %}  
+      {% if section.settings['valentines-themed-mugs-desktop-banner'] != blank or section.settings['valentines-themed-mugs-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.valentines-themed-mugs-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.valentines-themed-mugs-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+              {% elsif collection.title contains "Valentine Candles" %}  
+      {% if section.settings['valentine-candles-desktop-banner'] != blank or section.settings['valentine-candles-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.valentine-candles-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.valentine-candles-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+      {% elsif collection.title contains "The Modern Protest Collection" %}  
+      {% if section.settings['the-modern-protest-collection-desktop-banner'] != blank or section.settings['the-modern-protest-collection-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.the-modern-protest-collection-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.the-modern-protest-collection-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+      {% elsif collection.title contains "Dad Themed Tees" %}  
+      {% if section.settings['dad-themed-tees-desktop-banner'] != blank or section.settings['dad-themed-tees-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.dad-themed-tees-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.dad-themed-tees-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+      
+    {% elsif collection.title contains "Tote Bags Collection" %}  
+      {% if section.settings['tote-bags-collection-desktop-banner'] != blank or section.settings['tote-bags-collection-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.tote-bags-collection-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.tote-bags-collection-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+      {% elsif collection.title contains "St. Patrick's Day" %}  
+      {% if section.settings['st-patricks-day-collection-desktop-banner'] != blank or section.settings['st-patricks-day-collection-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.st-patricks-day-collection-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.st-patricks-day-collection-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+{% elsif collection.title contains "Halloween Decor" %}
+{% if section.settings['halloween-decor-desktop-banner'] != blank or section.settings['halloween-decor-mobile-banner'] != blank %}
+  <div class="collection-page-banner">
+    <div class="desktop-banner">
+      <img src="{{ section.settings['halloween-decor-desktop-banner'] | img_url: 'master' }}" alt="Halloween Decor" loading="lazy">
+    </div>
+    <div class="mobile-banner">
+      <img src="{{ section.settings['halloween-decor-mobile-banner'] | img_url: 'master' }}" alt="Halloween Decor" loading="lazy">
+    </div>
+  </div>
+{% else %}
+  <div class="page-width page-content page-content--top">
+    <header class="section-header section-header--flush">
+      {%- render 'breadcrumbs' -%}
+      <h1 class="section-header__title inuse">
+        {{ collection.title }}
+      </h1>
+    </header>
+  </div>
+{% endif %}
+
+      {% elsif collection.title contains "Memorial Themed Ornaments" %}  
+      {% if section.settings['Memorial-Themed-Ornaments-collection-desktop-banner'] != blank or section.settings['Memorial-Themed-Ornaments-collection-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.Memorial-Themed-Ornaments-collection-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.Memorial-Themed-Ornaments-collection-desktop-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+      {% elsif collection.handle == 'all-ornaments' %}
+  {% if section.settings['Memorial-Themed-Ornaments-collection-desktop-banner'] != blank or section.settings['Memorial-Themed-Ornaments-collection-mobile-banner'] != blank %}
+    <div class="collection-page-banner">
+      <div class="desktop-banner">
+        <img src="{{ section.settings['Memorial-Themed-Ornaments-collection-desktop-banner'] | img_url:'master' }}" alt="desktop" loading="lazy">
+      </div>
+      <div class="mobile-banner">
+        <img src="{{ section.settings['Memorial-Themed-Ornaments-collection-mobile-banner'] | img_url:'master' }}" alt="mobile" loading="lazy">
+      </div>
+    </div>
+  {% else %}
+    <div class="page-width page-content page-content--top">
+      <header class="section-header section-header--flush">
+        {%- render 'breadcrumbs' -%}
+        <h1 class="section-header__title inuse">{{ collection.title }}</h1>
+      </header>
+    </div>
+  {% endif %}
+
+{% elsif collection.handle == 'best-selling-ornaments' %}
+  {% if section.settings['valentines-themed-items-desktop-banner'] != blank or section.settings['valentines-themed-items-mobile-banner'] != blank %}
+    <div class="collection-page-banner">
+      <div class="desktop-banner">
+        <img src="{{ section.settings['valentines-themed-items-desktop-banner'] | img_url:'master' }}" alt="desktop" loading="lazy">
+      </div>
+      <div class="mobile-banner">
+        <img src="{{ section.settings['valentines-themed-items-mobile-banner'] | img_url:'master' }}" alt="mobile" loading="lazy">
+      </div>
+    </div>
+  {% else %}
+    <div class="page-width page-content page-content--top">
+      <header class="section-header section-header--flush">
+        {%- render 'breadcrumbs' -%}
+        <h1 class="section-header__title inuse">{{ collection.title }}</h1>
+      </header>
+    </div>
+  {% endif %}
+
+
+      {% elsif collection.title contains "Easter Tote Bags" %}  
+      {% if section.settings['easter-tote-bags-collection-desktop-banner'] != blank or section.settings['easter-tote-bags-collection-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.easter-tote-bags-collection-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.easter-tote-bags-collection-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+     {% elsif collection.title contains 'Christian Tees' %}  
+      {% if section.settings['ct-desktop-banner'] != blank or section.settings['ct-mobile-banner'] != blank %}
+      <div class="collection-page-banner">
+      <div class="desktop-banner">
+        <img src="{{ section.settings['ct-desktop-banner'] | img_url:'master' }}" alt="desktop" loading="lazy">
+      </div>
+      <div class="mobile-banner">
+        <img src="{{ section.settings['ct-mobile-banner'] | img_url:'master' }}" alt="mobile" loading="lazy">
+      </div>
+      </div>
+      {% else %}
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+         {% elsif collection.title contains "Easter Tees" %}  
+      {% if section.settings['easter-tees-collection-desktop-banner'] != blank or section.settings['easter-tees-collection-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.easter-tees-collection-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.easter-tees-collection-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+    {% elsif collection.handle == "2026-soccer-championship" %}  
+      {% if section.settings['soccer-championship-desktop-banner'] != blank or section.settings['soccer-championship-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.soccer-championship-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.soccer-championship-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+    {% elsif collection.handle contains "soccer-championship-tote-bag" %}  
+      {% if section.settings['soccer-championship-tote-bag-desktop-banner'] != blank or section.settings['soccer-championship-tote-bag-mobile-banner'] != blank %}
+        <div class="collection-page-banner">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.soccer-championship-tote-bag-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.soccer-championship-tote-bag-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+
+        <div class="page-width page-content page-content--top">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}
+
+    {% elsif collection.handle contains "soccer-championship-t-shirt" %}  
+      {% if section.settings['soccer-championship-t-shirt-desktop-banner'] != blank or section.settings['soccer-championship-t-shirt-mobile-banner'] != blank %}
+        <div class="collection-page-banner {{collection.title }}">
+          <div class="desktop-banner">
+            <img src="{{ section.settings.soccer-championship-t-shirt-desktop-banner | img_url:'master' }}" alt="desktop" loading="lazy">
+          </div>
+          <div class="mobile-banner">
+            <img src="{{ section.settings.soccer-championship-t-shirt-mobile-banner | img_url:'master' }}" alt="mobile" loading="lazy">
+          </div>
+        </div>
+      {% else %}
+
+        <div class="page-width page-content page-content--top {{collection.title }}">
+          <header class="section-header section-header--flush">
+            {%- render 'breadcrumbs' -%}
+            <h1 class="section-header__title inuse sd">
+              {{ collection.title }}
+            </h1>
+          </header>
+        </div>
+      {% endif %}  
+
+
+    {% else %}
+      <div class="page-width page-content page-content--top {{collection.title }}">
+        <header class="section-header section-header--flush">
+          {%- render 'breadcrumbs' -%}
+          <h1 class="section-header__title inuse he">
+            {{ collection.title }}
+          </h1>
+        </header>
+      </div>
+    {%- endif -%}
+    
+  {%- endif -%}
+{% else %}
+  {%- assign disable_sticky_header = true -%}
+{%- endif -%}
+
+{%- if disable_sticky_header -%}
+  {% comment %}
+    Div to trigger theme.CollectionHeader JS
+  {% endcomment %}
+  <div
+    id="CollectionHeaderSection"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-header"
+  ></div>
+{%- endif -%}
+{% schema %}
+{
+
+  "name": "t:sections.collection-header.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "ct-desktop-banner",
+      "label": "Christian Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct-mobile-banner",
+      "label": "Christian Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "Memorial-Themed-Ornaments-collection-desktop-banner",
+      "label": "Memorial Themed Ornaments"
+    },
+    {
+      "type": "image_picker",
+      "id": "Memorial-Themed-Ornaments-collection-mobile-banner",
+      "label": "Memorial Themed Ornaments Mobile Banner"
+    },
+{
+  "type": "image_picker",
+  "id": "halloween-decor-desktop-banner",
+  "label": "Halloween Decor Desktop Banner"
+},
+{
+  "type": "image_picker",
+  "id": "halloween-decor-mobile-banner",
+  "label": "Halloween Decor Mobile Banner"
+},
+    {
+      "type": "image_picker",
+      "id": "desktop-banner",
+      "label": "Mom Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-banner",
+      "label": "Mom Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "dad-desktop-banner",
+      "label": "Dad Themed Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "dad-mobile-banner",
+      "label": "Dad Themed Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "patriotic-desktop-banner",
+      "label": "Patriotic T-Shirts Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "patriotic-mobile-banner",
+      "label": "Patriotic T-Shirts Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "inspirational-desktop-banner",
+      "label": "Inspirational Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "inspirational-mobile-banner",
+      "label": "Inspirational Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "travel-desktop-banner",
+      "label": "Travel Themed Shirts Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "travel-mobile-banner",
+      "label": "Travel Themed Shirts Mobile Banner"
+    },
+{
+      "type": "image_picker",
+      "id": "halloween-desktop-banner",
+      "label": "Halloween Themed Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "halloween-mobile-banner",
+      "label": "Halloween Themed Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "humor-desktop-banner",
+      "label": "Humor to a Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "humor-mobile-banner",
+      "label": "Humor to a Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "family-desktop-banner",
+      "label": "Family Christmas Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "family-mobile-banner",
+      "label": "Family Christmas Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "christmas-desktop-banner",
+      "label": "Christmas Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "christmas-mobile-banner",
+      "label": "Christmas Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "glass-desktop-banner",
+      "label": "Glass Ornaments Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "glass-mobile-banner",
+      "label": "Glass Ornaments Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "christmasDecor-desktop-banner",
+      "label": "Christmas Decor Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "christmasDecor-mobile-banner",
+      "label": "Christmas Decor Mobile Banner"
+    },
+{
+      "type": "image_picker",
+      "id": "christmasOrnaments-desktop-banner",
+      "label": "All Christmas Themed Ornaments Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "christmasOrnaments-mobile-banner",
+      "label": "All Christmas Themed Ornaments Mobile Banner"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "valentines-themed-items-desktop-banner",
+      "label": "All valentines themed items Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentines-themed-items-mobile-banner",
+      "label": "All valentines themed items Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentines-themed-tees-desktop-banner",
+      "label": "Valentines themed tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentines-themed-tees-mobile-banner",
+      "label": "Valentines themed tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentines-themed-mugs-desktop-banner",
+      "label": "Valentine's Themed Mugs Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentines-themed-mugs-mobile-banner",
+      "label": "Valentine's Themed Mugs Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentine-candles-desktop-banner",
+      "label": "Valentine Candles Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "valentine-candles-mobile-banner",
+      "label": "Valentine Candles Mobile Banner"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "the-modern-protest-collection-desktop-banner",
+      "label": "The Modern Protest Collection Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "the-modern-protest-collection-mobile-banner",
+      "label": "The Modern Protest Collection Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "tote-bags-collection-desktop-banner",
+      "label": "Tote Bags Collection Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "tote-bags-collection-mobile-banner",
+      "label": "Tote Bags Collection Mobile Banner"
+    },
+{
+      "type": "image_picker",
+      "id": "st-patricks-day-collection-desktop-banner",
+      "label": "St. Patrick's Day Collection Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "st-patricks-day-collection-mobile-banner",
+      "label": "St. Patrick's Day Collection Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "easter-tote-bags-collection-desktop-banner",
+      "label": "Easter Tote Bags Collection Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "easter-tote-bags-collection-mobile-banner",
+      "label": "Easter Tote Bags Collection Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "easter-tees-collection-desktop-banner",
+      "label": "Easter Tees Collection Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "easter-tees-collection-mobile-banner",
+      "label": "Easter Tees Collection Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "dad-themed-tees-desktop-banner",
+      "label": "Dad Themed Tees Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "dad-themed-tees-mobile-banner",
+      "label": "Dad Themed Tees Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "soccer-championship-desktop-banner",
+      "label": "2026 Soccer Championship Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "soccer-championship-mobile-banner",
+      "label": "2026 Soccer Championship Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "soccer-championship-tote-bag-desktop-banner",
+      "label": "2026 Soccer Championship Tote Bag Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "soccer-championship-tote-bag-mobile-banner",
+      "label": "2026 Soccer Championship Tote Bag Mobile Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "soccer-championship-t-shirt-desktop-banner",
+      "label": "2026 Soccer Championship T-shirt Desktop Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "soccer-championship-t-shirt-mobile-banner",
+      "label": "2026 Soccer Championship T-shirt Mobile Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "t:sections.collection-header.settings.enable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_image_enable",
+      "label": "t:sections.collection-header.settings.collection_image_enable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax",
+      "label": "t:sections.collection-header.settings.parallax.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "parallax_direction",
+      "label": "t:sections.background-image-text.settings.parallax_direction.label",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.background-image-text.settings.parallax_direction.options.top.label"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.background-image-text.settings.parallax_direction.options.left.label"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

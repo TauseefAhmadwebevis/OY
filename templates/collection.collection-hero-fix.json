@@ -1,0 +1,143 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_hero_sabby_mx4Aim": {
+      "type": "collection-hero-sabby",
+      "blocks": {
+        "collection_banner_KhztBg": {
+          "type": "collection_banner",
+          "settings": {
+            "collection": "school-day-kids-tees",
+            "desktop_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_1920x450_0f26b971-52a4-43af-87be-c95590596338.png",
+            "mobile_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_768x390_35aed8ad-1e9b-4e5d-9145-c5a911a42037.png",
+            "link": ""
+          }
+        },
+        "collection_banner_XaDWBD": {
+          "type": "collection_banner",
+          "settings": {
+            "collection": "school-ready-adult-tees",
+            "desktop_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_1920x450_0f26b971-52a4-43af-87be-c95590596338.png",
+            "mobile_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_768x390_35aed8ad-1e9b-4e5d-9145-c5a911a42037.png",
+            "link": ""
+          }
+        },
+        "collection_banner_YjPAzx": {
+          "type": "collection_banner",
+          "settings": {
+            "collection": "2-cool-4-school-sweatshirts",
+            "desktop_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_1920x450_0f26b971-52a4-43af-87be-c95590596338.png",
+            "mobile_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_768x390_35aed8ad-1e9b-4e5d-9145-c5a911a42037.png",
+            "link": ""
+          }
+        },
+        "collection_banner_pz3mUe": {
+          "type": "collection_banner",
+          "settings": {
+            "collection": "back-2-school-old-ec76df",
+            "desktop_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_1920x450_0f26b971-52a4-43af-87be-c95590596338.png",
+            "mobile_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_768x390_35aed8ad-1e9b-4e5d-9145-c5a911a42037.png",
+            "link": ""
+          }
+        },
+        "collection_banner_JCtYac": {
+          "type": "collection_banner",
+          "settings": {
+            "collection": "back-2-school",
+            "desktop_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_1920x450_0f26b971-52a4-43af-87be-c95590596338.png",
+            "mobile_banner": "shopify://shop_images/Ornamentally-You_-Banner_Backtoschool_Ausgust2026_768x390_35aed8ad-1e9b-4e5d-9145-c5a911a42037.png",
+            "link": ""
+          }
+        },
+        "collection_banner_QexCUb": {
+          "type": "collection_banner",
+          "settings": {
+            "collection": "secret-santa-gift-ornaments",
+            "desktop_banner": "shopify://shop_images/Christmas_in_July_NEW_Collection_Banner_2026.png",
+            "mobile_banner": "shopify://shop_images/Christmas_in_July_NEW_Collection_Banner_2026.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_banner_KhztBg",
+        "collection_banner_XaDWBD",
+        "collection_banner_YjPAzx",
+        "collection_banner_pz3mUe",
+        "collection_banner_JCtYac",
+        "collection_banner_QexCUb"
+      ],
+      "name": "Collection Hero Sabby",
+      "settings": {
+        "loading": "lazy",
+        "mobile_breakpoint": 768,
+        "bottom_spacing": 0,
+        "border_radius": 0,
+        "show_title_fallback": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "enable_collection_count": true,
+            "per_row": 4,
+            "rows_per_page": 7,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "product_grid"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "collapsed": true,
+        "filter_style": "sidebar",
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    },
+    "1687410536dbc38596": {
+      "type": "apps",
+      "blocks": {
+        "55c2cc5b-6ab1-4079-a988-94c3e6bf0ce5": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "45237",
+            "product_id_enabled": true,
+            "collection_id_enabled": true
+          }
+        }
+      },
+      "block_order": [
+        "55c2cc5b-6ab1-4079-a988-94c3e6bf0ce5"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "collection_hero_sabby_mx4Aim",
+    "main-collection",
+    "1687410536dbc38596"
+  ]
+}

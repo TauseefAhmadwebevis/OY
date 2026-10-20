@@ -1,0 +1,73 @@
+.mobile-banner {
+    display: none;
+}
+@media(max-width:767px){
+.mobile-banner {
+    display: block;
+}
+.desktop-banner{
+  display: none;
+}
+}
+
+/* =====================================================================
+   CRO: Shop Pay express checkout (cart drawer)
+   Markup: snippets/cro-express-pay.liquid (<template>), cloned by
+   assets/cro-express-pay.js right after the Rebuy Smart Cart Checkout button.
+   The link goes to /checkout?payment=shop_pay (straight to Shop Pay).
+
+   Hooks:
+     Row (Rebuy's .rebuy-cart__flyout-actions):
+       .cro-checkout-row  [data-cro="checkout-row"]
+     Express wrapper:
+       .cro-express-pay   [data-cro="shop-pay-express"][data-cro-location="cart-drawer"]
+     Button:
+       .cro-shop-pay-btn
+
+   Default: wrapper hidden, drawer looks exactly as before.
+   ===================================================================== */
+.cro-express-pay {
+  display: none;
+}
+
+.cro-shop-pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  padding: 0 12px;
+  background: #5a31f4;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s ease;
+}
+.cro-shop-pay-btn:hover,
+.cro-shop-pay-btn:focus-visible {
+  background: #390ced;
+  color: #fff;
+}
+.cro-shop-pay-btn.is-loading {
+  opacity: .7;
+  cursor: progress;
+  pointer-events: none;
+}
+.cro-shop-pay-btn__logo {
+  display: block;
+  width: auto;
+  height: 20px;
+}
+
+/* Variant: add the class .cro-variant-shoppay to <html> or <body>, then uncomment. */
+/*
+.cro-variant-shoppay .cro-checkout-row { column-gap: 10px; }
+.cro-variant-shoppay .cro-checkout-row .rebuy-cart__checkout-button,
+.cro-variant-shoppay .cro-express-pay { box-sizing: border-box; flex: 0 0 calc(50% - 5px); width: auto; min-width: 0; }
+.cro-variant-shoppay .cro-express-pay { display: block; }
+.cro-variant-shoppay .cro-checkout-row > :not(.rebuy-cart__checkout-button):not(.cro-express-pay) { flex: 0 0 100%; }
+*/

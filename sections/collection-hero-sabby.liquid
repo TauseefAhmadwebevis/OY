@@ -1,0 +1,211 @@
+<style>
+  .tda-collection-hero {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: {{ section.settings.bottom_spacing }}px;
+  }
+
+  .tda-collection-hero__link {
+    display: block;
+    width: 100%;
+  }
+
+  .tda-collection-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+
+  .tda-collection-hero__mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: {{ section.settings.mobile_breakpoint }}px) {
+    .tda-collection-hero__desktop {
+      display: none;
+    }
+    .tda-collection-hero__mobile {
+      display: block;
+    }
+  }
+</style>
+
+{%- comment -%} Find the block whose collection matches the current page {%- endcomment -%}
+{%- assign matched_block = nil -%}
+{%- for block in section.blocks -%}
+  {%- if block.settings.collection == collection.handle -%}
+    {%- assign matched_block = block -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if matched_block != nil -%}
+  {%- assign desktop_img = matched_block.settings.desktop_banner -%}
+  {%- assign mobile_img  = matched_block.settings.mobile_banner -%}
+  {%- assign banner_link = matched_block.settings.link -%}
+
+  {%- assign has_banner = false -%}
+  {%- if desktop_img != blank or mobile_img != blank -%}
+    {%- assign has_banner = true -%}
+  {%- endif -%}
+
+  {%- if has_banner -%}
+    <div class="tda-collection-hero" {{ block.shopify_attributes }}>
+      {%- if banner_link != blank -%}
+        <a href="{{ banner_link }}" class="tda-collection-hero__link">
+      {%- endif -%}
+
+      <div class="tda-collection-hero__desktop">
+        {%- if desktop_img != blank -%}
+          <img
+            src="{{ desktop_img | img_url: 'master' }}"
+            alt="{{ desktop_img.alt | default: collection.title }}"
+            loading="{{ section.settings.loading }}"
+            width="{{ desktop_img.width }}"
+            height="{{ desktop_img.height }}"
+          >
+        {%- endif -%}
+      </div>
+
+      <div class="tda-collection-hero__mobile">
+        {%- if mobile_img != blank -%}
+          <img
+            src="{{ mobile_img | img_url: 'master' }}"
+            alt="{{ mobile_img.alt | default: collection.title }}"
+            loading="{{ section.settings.loading }}"
+            width="{{ mobile_img.width }}"
+            height="{{ mobile_img.height }}"
+          >
+        {%- elsif desktop_img != blank -%}
+          <img
+            src="{{ desktop_img | img_url: 'master' }}"
+            alt="{{ desktop_img.alt | default: collection.title }}"
+            loading="{{ section.settings.loading }}"
+            width="{{ desktop_img.width }}"
+            height="{{ desktop_img.height }}"
+          >
+        {%- endif -%}
+      </div>
+
+      {%- if banner_link != blank -%}
+        </a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+{%- else -%}
+  {%- comment -%} No matching block found — show title fallback if enabled {%- endcomment -%}
+  {%- if section.settings.show_title_fallback -%}
+    <div class="page-width page-content page-content--top">
+      <header class="section-header section-header--flush">
+        <h1 class="section-header__title">
+          {{ collection.title }}
+        </h1>
+      </header>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Collection Hero",
+  "tag": "div",
+  "class": "tda-collection-hero-section",
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Global Options"
+    },
+    {
+      "type": "select",
+      "id": "loading",
+      "label": "Image Loading",
+      "default": "lazy",
+      "options": [
+        { "value": "lazy",  "label": "Lazy (recommended)" },
+        { "value": "eager", "label": "Eager (above the fold)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "mobile_breakpoint",
+      "label": "Mobile Breakpoint (px)",
+      "min": 480,
+      "max": 1024,
+      "step": 8,
+      "default": 768
+    },
+    {
+      "type": "range",
+      "id": "bottom_spacing",
+      "label": "Bottom Spacing (px)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border Radius (px)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title_fallback",
+      "label": "Show collection title if no banner matches",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_banner",
+      "name": "Collection Banner",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "header",
+          "content": "Banner Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_banner",
+          "label": "Desktop Banner"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_banner",
+          "label": "Mobile Banner",
+          "info": "Falls back to desktop banner if left empty"
+        },
+        {
+          "type": "header",
+          "content": "Options"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Banner Link",
+          "info": "Optional. Makes the entire banner clickable."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Hero Sabby",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,163 @@
+{{ 'section-landing-faq.css' | asset_url | stylesheet_tag }}
+{% render 'section-config' %}
+
+<div class="section-{{ section.id }} {{section.settings.sect_class}}">
+  {% if section.settings.background_image != blank %}
+    {{
+    section.settings.background_image
+    | image_url: width: 1920
+    | image_tag:
+    loading: 'lazy',
+    class: 'background-image',
+    width: section.settings.background_image.width,
+    alt: section.settings.background_image.alt
+    }}
+  {% endif %}
+  <div class="page-width{% if section.settings.background_image != blank %} with-bg{% endif %}">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-landing-faq__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="section-landing-faq__wrapper">
+        <div class="section-landing-faq__items">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.title != blank -%}
+              <div class="section-landing-faq__item">
+                <div class="section-landing-faq__item-content">
+                  <div class="section-landing-faq__item-question">
+                    <span class="m0">{{- block.settings.title -}}</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.0008 4.80005L12.0008 19.2M19.2008 12L4.80078 12" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                  </div>
+                  {%- if block.settings.text != blank -%}
+                    <div class="section-landing-faq__item-answer">{{- block.settings.text -}}</div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var faqItems = document.querySelectorAll('.section-{{ section.id }} .section-landing-faq__item');
+
+    faqItems.forEach(function(item) {
+      item.addEventListener('click', function(event) {
+        if (event.target.tagName.toLowerCase() === 'a') {
+          return;
+        }
+        var question = this.querySelector('.section-landing-faq__item-question');
+        var answer = this.querySelector('.section-landing-faq__item-answer');
+
+        if (!question.classList.contains('active')) {
+          slideDown(answer);
+          var activeQuestion = document.querySelector('.section-{{ section.id }} .section-landing-faq__item-question.active');
+          if (activeQuestion) {
+            slideUp(activeQuestion.closest('.section-landing-faq__item').querySelector('.section-landing-faq__item-answer'));
+            activeQuestion.classList.remove('active');
+          }
+          question.classList.add('active');
+        } else {
+          question.classList.remove('active');
+          slideUp(answer);
+        }
+      });
+    });
+
+    function slideDown(element) {
+      element.style.display = 'block';
+      var height = element.scrollHeight + 'px';
+      element.style.maxHeight = height;
+    }
+
+    function slideUp(element) {
+      element.style.maxHeight = '0';
+      setTimeout(() => {
+        element.style.display = 'none';
+      }, 500); // Match the transition duration
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Landing FAQ",
+  "class": "section-landing-faq",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FAQ’s"
+    },
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "text",
+      "id": "sect_class",
+      "label": "Custom class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing FAQ"
+    }
+  ]
+}
+{% endschema %}

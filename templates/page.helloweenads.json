@@ -1,0 +1,250 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_landing_logo_Em4HkM": {
+      "type": "section-landing-logo",
+      "settings": {
+        "max_width": 198,
+        "mobile_max_width": 150,
+        "image": "shopify://shop_images/land-logo-desk.png",
+        "image_mobile": "shopify://shop_images/land-logo-mob.png",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "bg_color": "rgba(0,0,0,0)",
+        "sect_class": ""
+      }
+    },
+    "section_landing_banner_fAqVck": {
+      "type": "section-landing-banner",
+      "settings": {
+        "image": "shopify://shop_images/hero.png",
+        "image_mobile": "shopify://shop_images/hero_1.png",
+        "title": "ADD A TOUCH OF <br>PERSONALITY TO <br>EVERY SPACE",
+        "text": "SIGN UP. RECEIVE A FREE GIFT. CREATE <br>CONTENT. EARN REWARDS.",
+        "info": "<p>Become an affiliate and earn <strong>20% </strong>commission for </p><p>every sale you generate. Get paid out instantly.</p>",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "bg_color": "",
+        "sect_class": ""
+      }
+    },
+    "section_landing_as_easy_3Dh3QE": {
+      "type": "section-landing-as-easy",
+      "blocks": {
+        "item_ygTGRi": {
+          "type": "item",
+          "settings": {
+            "title": "Apply In Seconds",
+            "text": "<p>Simply use the form below to apply</p>",
+            "text_max_with": 186
+          }
+        },
+        "item_qBDekm": {
+          "type": "item",
+          "settings": {
+            "title": "Receive 5 FREE OrmanentallyYou Ornaments",
+            "text": "",
+            "text_max_with": 204
+          }
+        },
+        "item_fyVFM6": {
+          "type": "item",
+          "settings": {
+            "title": "Create Content",
+            "text": "<p>And share it on your social media and tag <strong>@ornamentallyyou</strong> OR simply send it to us at  <a href=\"mailto:ornamentallyyou@evestar.co\" title=\"mailto:ornamentallyyou@evestar.co\"><strong>ornamentallyyou@evestar.co</strong></a></p>",
+            "text_max_with": 286
+          }
+        },
+        "item_aWkiQF": {
+          "type": "item",
+          "settings": {
+            "title": "Start Earning",
+            "text": "<p>Share your unique link & earn <strong>20%</strong> commission on all sales generated</p>",
+            "text_max_with": 280
+          }
+        }
+      },
+      "block_order": [
+        "item_ygTGRi",
+        "item_qBDekm",
+        "item_fyVFM6",
+        "item_aWkiQF"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "bg_color": "rgba(0,0,0,0)",
+        "sect_class": ""
+      }
+    },
+    "1725358640e364951d": {
+      "type": "apps",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "section_landing_join_HW9qa3": {
+      "type": "section-landing-join",
+      "blocks": {
+        "collection_xCQyyh": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/img.png",
+            "title": "Witches and Cat ORNAMENTS",
+            "url": ""
+          }
+        },
+        "collection_cMwx9T": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/img_1.png",
+            "title": "HORROR ORNAMENTS",
+            "url": ""
+          }
+        },
+        "collection_J4GNAJ": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/img_2.png",
+            "title": "Poet Edgar Allan Poe ORNAMENT",
+            "url": ""
+          }
+        },
+        "collection_bb3K9n": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/img_3.png",
+            "title": "SCARY MOVIE ORNAMENTS",
+            "url": ""
+          }
+        },
+        "collection_GMkXMM": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/img_4.png",
+            "title": "LITERARY ORNAMENTS",
+            "url": ""
+          }
+        },
+        "collection_43XftK": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/img_5.png",
+            "title": "HALLOWEEN XMAS ORNAMENTS",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_xCQyyh",
+        "collection_cMwx9T",
+        "collection_J4GNAJ",
+        "collection_bb3K9n",
+        "collection_GMkXMM",
+        "collection_43XftK"
+      ],
+      "settings": {
+        "heading": "Choose 5 ornaments from hundreds of designs",
+        "button_text": "Browse All Halloween Ornaments",
+        "button_link": "shopify://collections/horror-themed-ornaments",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "bg_color": "",
+        "sect_class": ""
+      }
+    },
+    "section_landing_faq_bnxmEr": {
+      "type": "section-landing-faq",
+      "blocks": {
+        "item_49kDQd": {
+          "type": "item",
+          "settings": {
+            "title": "How do I know if I am approved to be your partner?",
+            "text": "<p>If you received an email from us to sign up for the content generation program, you’re in!<br/>Simply sign up and avail your free gift.</p>"
+          }
+        },
+        "item_DRxeUM": {
+          "type": "item",
+          "settings": {
+            "title": "How quickly will I receive the product?",
+            "text": "<p>Shipping takes 2-4 business days.</p>"
+          }
+        },
+        "item_fhCPdQ": {
+          "type": "item",
+          "settings": {
+            "title": "How long do I have to make content?",
+            "text": "<p>You have 14 days to send us content. Ideally, the UGC video you provide us will be 20-40 seconds, but we just want to see engaging content!</p>"
+          }
+        },
+        "item_3wW7kV": {
+          "type": "item",
+          "settings": {
+            "title": "How do I send you content?",
+            "text": "<p>Tag @ornamentallyyou on social OR simply email us at <a href=\"mailto:ornamentallyyou@evestar.com\">ornamentallyyou@evestar.com</a></p>"
+          }
+        },
+        "item_4UdEeE": {
+          "type": "item",
+          "settings": {
+            "title": "How do I track my sales?",
+            "text": "<p>Once you sign up and create your account, you’ll be able to log in to your Social Snowball dashboard to see your sales.</p>"
+          }
+        },
+        "item_n8qwfk": {
+          "type": "item",
+          "settings": {
+            "title": "When and how do I get paid?",
+            "text": "<p>You will get paid automatically whenever you generate a sale.</p>"
+          }
+        },
+        "item_WxhLMH": {
+          "type": "item",
+          "settings": {
+            "title": "How to be a good partner to OrnamentallyYou?",
+            "text": "<p>Communication is key! We’ll send over talking points and ideas for your videos. Want to try something new? Or can’t meet your delivery deadline? Just let us know.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_49kDQd",
+        "item_DRxeUM",
+        "item_fhCPdQ",
+        "item_3wW7kV",
+        "item_4UdEeE",
+        "item_n8qwfk",
+        "item_WxhLMH"
+      ],
+      "settings": {
+        "heading": "FAQ’s",
+        "padding_top": 90,
+        "padding_bottom": 88,
+        "bg_color": "#f6f6f6",
+        "sect_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_landing_logo_Em4HkM",
+    "section_landing_banner_fAqVck",
+    "section_landing_as_easy_3Dh3QE",
+    "1725358640e364951d",
+    "section_landing_join_HW9qa3",
+    "section_landing_faq_bnxmEr"
+  ]
+}

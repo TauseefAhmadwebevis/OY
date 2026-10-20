@@ -1,0 +1,127 @@
+{{ 'section-landing-banner.css' | asset_url | stylesheet_tag }}
+{% render 'section-config' %}
+
+{% liquid
+  assign title = section.settings.title
+  assign text = section.settings.text
+  assign info = section.settings.info
+%}
+
+<div class="section-landing-banner__inner section-{{ section.id }} {{section.settings.sect_class}}">
+  {% if section.settings.image != blank %}
+    <div class="section-landing-banner__image">
+      {{
+      section.settings.image
+      | image_url: width: 3840
+      | image_tag:
+      loading: 'lazy',
+      class: 'desktop',
+      width: section.settings.image.width,
+      alt: section.settings.image.alt
+      }}
+      {% if section.settings.image_mobile != blank %}
+        {{
+        section.settings.image_mobile
+        | image_url: width: 3840
+        | image_tag:
+        loading: 'lazy',
+        class: 'mobile',
+        width: section.settings.image_mobile.width,
+        alt: section.settings.image_mobile.alt
+        }}
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if title != blank or text != blank or info != blank %}
+    <div class="section-landing-banner__content page-width">
+      {% if title != blank %}
+        <p class="section-landing-banner__title">{{ title }}</p>
+      {% endif %}
+      {% if text != blank %}
+        <p class="section-landing-banner__text">{{ text }}</p>
+      {% endif %}
+      {% if info != blank %}
+        <div class="section-landing-banner__info">{{ info }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Landing banner",
+  "tag": "section",
+  "class": "section-landing-banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "info",
+      "label": "Info"
+    },
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "text",
+      "id": "sect_class",
+      "label": "Custom class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing banner",
+      "category": "image"
+    }
+  ]
+}
+{% endschema %}

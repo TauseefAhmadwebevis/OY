@@ -1,0 +1,114 @@
+{{ 'section-landing-as-easy.css' | asset_url | stylesheet_tag }}
+{% render 'section-config' %}
+{% style %}
+  .section-{{ section.id }} .section-landing-as-easy__item span {
+    color: {{ section.settings.counter_color }};
+  }
+{% endstyle %}
+<div class="section-landing-as-easy__inner section-{{ section.id }} {{section.settings.sect_class}}">
+  <div class="page-width">
+    {% if section.blocks.size > 0 %}
+      <div class="section-landing-as-easy__items">
+        {% for block in section.blocks %}
+          <div class="section-landing-as-easy__item">
+            <span>0{{ forloop.index }}</span>
+            {% if block.settings.title != blank %}
+              <p class="section-landing-as-easy__item-title">{{ block.settings.title }}</p>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="section-landing-as-easy__item-text" style="max-width: {{ block.settings.text_max_with }}px;">{{ block.settings.text }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing as easy",
+  "tag": "section",
+  "class": "section-landing-as-easy",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "counter_color",
+      "label": "Counter color",
+      "default": "#25564e"
+    },
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 92
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#D9EEF9"
+    },
+    {
+      "type": "text",
+      "id": "sect_class",
+      "label": "Custom class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "range",
+          "id": "text_max_with",
+          "min": 186,
+          "max": 286,
+          "step": 1,
+          "unit": "px",
+          "label": "Text max width",
+          "default": 204
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing as easy",
+      "category": "text"
+    }
+  ]
+}
+{% endschema %}

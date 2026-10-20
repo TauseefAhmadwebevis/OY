@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1b1588c6-95aa-4b7d-9165-bde6dabdd661": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16739748282596__1b1588c6-95aa-4b7d-9165-bde6dabdd661-1687413219f0481435-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Your Order Status"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748282596__1b1588c6-95aa-4b7d-9165-bde6dabdd661-1687413219f0481435-0"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "168741318977c2c320": {
+      "type": "apps",
+      "blocks": {
+        "be85234c-5e97-4cc0-b443-c3aa4ebd0d37": {
+          "type": "shopify://apps/track-by-loop/blocks/wonderBlock/89d63369-6ee7-4097-ac41-8229c6f90001",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "be85234c-5e97-4cc0-b443-c3aa4ebd0d37"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1700264495906e992b": {
+      "type": "apps",
+      "blocks": {
+        "d99aeb52-30ed-4d42-938b-5ead9885ce50": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "157848",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        }
+      },
+      "block_order": [
+        "d99aeb52-30ed-4d42-938b-5ead9885ce50"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "ed3643b1-7527-4f31-a7f2-4dcf076dd1bd": {
+      "type": "faq",
+      "blocks": {
+        "template--16739748282596__ed3643b1-7527-4f31-a7f2-4dcf076dd1bd-1687413347f00d8b62-0": {
+          "type": "question",
+          "settings": {
+            "title": "Do ornaments come with a gold string?",
+            "text": "<p>Yes! Sometimes the string gets stuck inside the crevices of the pouch. Please double check, we almost never forget it!</p>"
+          }
+        },
+        "template--16739748282596__ed3643b1-7527-4f31-a7f2-4dcf076dd1bd-1687413347f00d8b62-1": {
+          "type": "question",
+          "settings": {
+            "title": "When will my order arrive?",
+            "text": "<p>Due to the unpredictable nature of weather, holiday delays, and internal carrier issues, all shipping times are approximate.<br/><br/>United States: Delivered within 1-4 business days<br/>Canada: Delivered within 1-2 weeks<br/>Rest of the World: Delivered within 1-3+ weeks</p>"
+          }
+        },
+        "1645d592-ffb5-4fac-86b4-e794d4591fd8": {
+          "type": "question",
+          "settings": {
+            "title": "When will my order ship?",
+            "text": "<p>All orders are processed and complete by 1-3 business days.</p>"
+          }
+        },
+        "bb765fff-4b52-45e1-8899-9888a28a4b0d": {
+          "type": "question",
+          "settings": {
+            "title": "Order is confirmed but there's been no updates",
+            "text": "<p>An order is officially confirmed once we print a label for it.<br/><br/>We have scheduled pickups with our local post office in our facility and sometimes when we leave our packages for them they may not update the tracking due to it being either the weekend, a delay due to a higher volume of traffic, local weather conditions, or in the worst case scenario, a lost package. In the last case, we would speedily resolve those issues by sending you a new replacement order immediately. 💚</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748282596__ed3643b1-7527-4f31-a7f2-4dcf076dd1bd-1687413347f00d8b62-0",
+        "template--16739748282596__ed3643b1-7527-4f31-a7f2-4dcf076dd1bd-1687413347f00d8b62-1",
+        "1645d592-ffb5-4fac-86b4-e794d4591fd8",
+        "bb765fff-4b52-45e1-8899-9888a28a4b0d"
+      ],
+      "settings": {
+        "title": "FAQs"
+      }
+    },
+    "edd84c52-ddaf-4b07-bc47-d4377abb4794": {
+      "type": "promo-grid",
+      "blocks": {
+        "9f3fe77a-be16-438b-bacf-e6c7934b2f0d": {
+          "type": "banner",
+          "settings": {
+            "heading": "Checkout our Facebook Group Communities!",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_tint": "#ffffff",
+            "color_tint_opacity": 8,
+            "framed": false
+          }
+        },
+        "514fd822-8a6e-403e-ae20-9575437718ed": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Christmas_Wonderland_Group_Banner.png",
+            "link": "https://www.facebook.com/groups/thechristmaswonderland",
+            "width": "33"
+          }
+        },
+        "c2b99a2e-2021-4b14-9002-07d4635800d9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Fall_Wonderland_Group_Banner.png",
+            "link": "https://www.facebook.com/groups/fallwonderland",
+            "width": "33"
+          }
+        },
+        "8b57b372-0bf2-4221-b8b7-34915e78d161": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Halloween_Wonderland_Group_Banner.png",
+            "link": "https://www.facebook.com/groups/halloweenwonderland",
+            "width": "33"
+          }
+        }
+      },
+      "block_order": [
+        "9f3fe77a-be16-438b-bacf-e6c7934b2f0d",
+        "514fd822-8a6e-403e-ae20-9575437718ed",
+        "c2b99a2e-2021-4b14-9002-07d4635800d9",
+        "8b57b372-0bf2-4221-b8b7-34915e78d161"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 1,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1b1588c6-95aa-4b7d-9165-bde6dabdd661",
+    "168741318977c2c320",
+    "1700264495906e992b",
+    "ed3643b1-7527-4f31-a7f2-4dcf076dd1bd",
+    "edd84c52-ddaf-4b07-bc47-d4377abb4794"
+  ]
+}

@@ -1,0 +1,73 @@
+<script>
+  const preorderCustom = {
+     render: function(){
+          this.initSelectors()
+          this.handleEvents()
+     },
+     initSelectors: function(){
+          window.GloboPreorderParams = window.GloboPreorderParams || {};
+          window.GloboPreorderParams.selectors = window.GloboPreorderParams.selectors || {};
+          window.GloboPreorderParams.selectors.quickViewActivator = ".quick-product__btn";
+          window.GloboPreorderParams.selectors.quickViewProductForm = ".modal--is-active form.product-single__form";
+          window.GloboPreorderParams.selectors.productImageSelectors = [".grid__image-ratio"];
+          window.GloboPreorderParams.selectors.productAddToCartBtn = ['button[type="submit"]'];
+          window.GloboPreorderParams.selectors.collectionFilterSelector += ", .tag__checkbox-wrapper, .tag--remove, #SortBy";
+     },
+     handleEvents: function(){
+          const app = this;
+       
+          document.addEventListener('globo.preorder.show.preorder', e => {
+              const {form, profile} = e.detail;
+              const {fullPayment, partialPayment} = profile.discountPayment;
+              if((!fullPayment.enable || (fullPayment.enable && fullPayment.discountValue == '0')) && !partialPayment.enable){
+                  form.addClass('gHidePaymentOption')
+              }else{
+                  form.removeClass('gHidePaymentOption')
+              }
+          })
+        
+         window.addEventListener('load', () => {
+             $(window.GloboPreorderParams.selectors.quickViewActivator).on('click', e => {
+                console.log('click')
+                 window.Globo.Preorder.initCollectionQuickview(e.target)
+             })
+         })
+     },
+     handleFilterChange: function(){
+         const app = this;
+
+         if(window?.Globo?.Preorder){
+             window.Globo.Preorder.initPreorder()
+         }
+
+         let collectionFilterSelectors = document.querySelectorAll(window.GloboPreorderParams.selectors.collectionFilterSelector)
+         if(collectionFilterSelectors.length){
+             collectionFilterSelectors.forEach(collectionFilterSelector => {
+                 ['click', 'change'].forEach(action => {
+                     collectionFilterSelector.addEventListener(action, () => {
+                         app.appSetInterval(() => {
+                             app.handleFilterChange()
+                         }, 2000, 2)
+                     })
+                 })
+             })
+         }
+     },
+     appSetInterval: function(e, t, n) {
+          e();
+          var s = 0
+            , r = window.setInterval((function() {
+              e(),
+              ++s === n && window.clearInterval(r)
+          }), t)
+      }
+  }
+  preorderCustom.render()
+
+  
+</script>
+<style>
+  .gHidePaymentOption .gPreorderSellingPlanWrapper{
+      display: none;
+  }
+</style>

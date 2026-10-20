@@ -1,0 +1,122 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions-0": {
+          "type": "promotion",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions-1": {
+          "type": "promotion",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions-2": {
+          "type": "promotion",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions-0",
+        "footer-promotions-1",
+        "footer-promotions-2"
+      ],
+      "settings": {
+        "hide_homepage": false,
+        "image_size": "wide"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "099f08f1-fd0a-4aca-b892-a23cb1b17769": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "company-info",
+            "container_width": 21
+          }
+        },
+        "footer2": {
+          "type": "newsletter",
+          "settings": {
+            "show_footer_title": true,
+            "title": "Community",
+            "text": "<p><a href=\"https://www.facebook.com/groups/thechristmaswonderland\" target=\"_blank\" title=\"https://www.facebook.com/groups/thechristmaswonderland\">Join our Facebook group to be a part of an awesome Christmas community! <br/><em>450k members and counting!<br/><br/></em></a>Check out our <a href=\"https://ornamentallyyou.com/a/blog\" target=\"_blank\" title=\"https://ornamentallyyou.com/a/blog\">blog!</a> </p><p><strong>Sign up and Save!</strong></p><p>Subscribe to get special offers, free giveaways, and once-in-a-year deals.</p>",
+            "container_width": 33
+          }
+        },
+        "footer-1": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "footer",
+            "container_width": 21
+          }
+        },
+        "footer-0": {
+          "type": "logo_social",
+          "settings": {
+            "logo": "shopify://shop_images/Close-Up_Version_OY_OrnamentallyYou_Initials_Logo.png",
+            "title": "HANDCRAFTED WITH LOVE",
+            "desktop_logo_height": 155,
+            "container_width": 25
+          }
+        }
+      },
+      "block_order": [
+        "099f08f1-fd0a-4aca-b892-a23cb1b17769",
+        "footer2",
+        "footer-1",
+        "footer-0"
+      ],
+      "settings": {
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false,
+        "show_payment_icons": true,
+        "show_copyright": true,
+        "copyright_text": ""
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}

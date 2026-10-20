@@ -1,0 +1,265 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "94d7e11f-1e5b-4b43-8daa-42b86d8ed097": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16739748315364__94d7e11f-1e5b-4b43-8daa-42b86d8ed097-1687411195a5c1d21b-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "We Love to Wholesale",
+            "title_size": 100,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/heidi-fin-2TLREZi7BUg-unsplash.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "template--16739748315364__94d7e11f-1e5b-4b43-8daa-42b86d8ed097-1687411195a5c1d21b-1": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Fast Shipping. Great Margins",
+            "title_size": 67,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/over-the-top-christmas-decoration.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748315364__94d7e11f-1e5b-4b43-8daa-42b86d8ed097-1687411195a5c1d21b-0",
+        "template--16739748315364__94d7e11f-1e5b-4b43-8daa-42b86d8ed097-1687411195a5c1d21b-1"
+      ],
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "84acbb1c-d522-4a01-817d-6f9fbc212e91": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16739748315364__84acbb1c-d522-4a01-817d-6f9fbc212e91-1687413219f0481435-0": {
+          "type": "heading",
+          "settings": {
+            "title": "A Little Background"
+          }
+        },
+        "template--16739748315364__84acbb1c-d522-4a01-817d-6f9fbc212e91-1687413219f0481435-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>✨ Currently, we are open to wholesale inquiries. Please contact us via <a href=\"mailto:wholesale@ornamentallyyou.com?subject=Wholesale%2FBulk%20Order%20Inquiry\" target=\"_blank\">email</a> at wholesale@ornamentallyyou.com with details or click the button below to shop with us directly. </p><p></p><p>🎁 We can accommodate smaller orders that would be suited for the mom-and-pop shop, or for the risk averse first time retailer. We also have the capacity to service larger stores. Your margins can potentially be upwards of 60-70%! </p><p></p><p>📝 Contact us to work directly, for custom orders, or for volume-based pricing discounts!</p><p><a href=\"https://www.faire.com/apply/ornamentallyyou\" target=\"_blank\" title=\"https://www.faire.com/apply/ornamentallyyou\"><em><strong>Sign up here</strong></em></a><em><strong> </strong></em><strong>to see our catalog</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748315364__84acbb1c-d522-4a01-817d-6f9fbc212e91-1687413219f0481435-0",
+        "template--16739748315364__84acbb1c-d522-4a01-817d-6f9fbc212e91-1687413219f0481435-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "cd7d336c-eb3f-4b33-b254-18413d094b1b": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16739748315364__cd7d336c-eb3f-4b33-b254-18413d094b1b-168741555125766c92-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Why choose us as a vendor?",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/lounging-santa.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748315364__cd7d336c-eb3f-4b33-b254-18413d094b1b-168741555125766c92-0"
+      ],
+      "settings": {
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "b477b41a-3ca1-44b0-ac6c-5b0c272db9e2": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16739748315364__b477b41a-3ca1-44b0-ac6c-5b0c272db9e2-1687415638cfd0088f-0": {
+          "type": "heading",
+          "settings": {
+            "title": "About us: A Team of Dreamers and Artisans"
+          }
+        },
+        "template--16739748315364__b477b41a-3ca1-44b0-ac6c-5b0c272db9e2-1687415638cfd0088f-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Explore our collection of curated decor, designed to turn spaces into captivating narratives or thoughtful gifts for cherished souls. </p><p>Our meticulously chosen artisan products, sourced and crafted with care, embody creativity and individuality, offering a testament to extraordinary living. Embrace the delight of gifting as you adorn lives with love and inspiration through our selection. <br/><br/>Join the OrnamentallyYou experience – a haven where each curated piece showcases our dedication to exceptional living and the heartfelt art of meaningful giving.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748315364__b477b41a-3ca1-44b0-ac6c-5b0c272db9e2-1687415638cfd0088f-0",
+        "template--16739748315364__b477b41a-3ca1-44b0-ac6c-5b0c272db9e2-1687415638cfd0088f-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "7f2d94f5-b89a-4c1f-b2bc-a9948be8d365": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/pexels-any-lane-5728308_copy.jpg",
+        "image_mask": "none",
+        "image2": "shopify://shop_images/family-in-front-of-christmas-tree.jpg",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Simple",
+        "text": "<p><em>Happy customers  </em>⭐️⭐️⭐️⭐️⭐️</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "f4f08417-9a09-4dd9-8fff-fd243bbca10b": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16739748315364__f4f08417-9a09-4dd9-8fff-fd243bbca10b-1687415638cfd0088f-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>If our online customers tell us things like \"they are even better in person!\", then we should believe them. With over a thousand reviews, our average rating across the internet is a 4.9! <br/><br/><a href=\"https://ornamentallyyou.com/pages/happy-customer-testimonials\" target=\"_blank\" title=\"popular christmas ornaments\"><strong>Click here</strong></a> to see our happy customers testimonials on our website<br/><br/><a href=\"https://www.trustpilot.com/review/ornamentallyyou.com\" target=\"_blank\" title=\"https://www.trustpilot.com/review/ornamentallyyou.com\"><strong>Click here</strong></a> to see our reviews on Trustpilot, a 3rd party review aggregator<br/><br/><a href=\"https://www.faire.com/apply/ornamentallyyou\" target=\"_blank\" title=\"https://www.faire.com/apply/ornamentallyyou\"><strong>Click here</strong></a> to exclusively view our wholesale reviews through Faire's Wholesale Marketplace. We currently have a perfect 5-star rating. <br/><br/><a href=\"https://www.faire.com/apply/ornamentallyyou\" title=\"https://www.faire.com/apply/ornamentallyyou\">Sign up here</a> to see our catalog</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748315364__f4f08417-9a09-4dd9-8fff-fd243bbca10b-1687415638cfd0088f-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "0ab79e85-af1a-48f0-922c-884a26d6ba47": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/holiday-outdoor-market.jpg",
+        "image_mask": "none",
+        "image2": "shopify://shop_images/depositphotos_41232093-stock-photo-european-landmarks-collage_3521dc01-28b6-4d0c-8bac-b7ce88084578.jpg",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Custom",
+        "text": "<p>Anything you want on an ornament 💭</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "center",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "13463b01-7bdd-4ddc-91bb-aa3a59093dcf": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16739748315364__13463b01-7bdd-4ddc-91bb-aa3a59093dcf-1687415638cfd0088f-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>We have the ability to customize your ornaments. This is a great option for store owners in unique locations, with splendid local landmarks, etc. </p><p>They are also great for specific occasions such as company events, festivals, flea markets, and more.</p><p></p><p>The vast number of possible themes make for year-round relevancy in these wonderful gift products!</p><p></p><p>🎁 🎄 🎁 🎄 🎁 🎄 🎁 🎄 🎁 🎄 🎁</p><p></p><p></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16739748315364__13463b01-7bdd-4ddc-91bb-aa3a59093dcf-1687415638cfd0088f-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "dfb18f21-723c-4c28-9347-929e2fdcb7be": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact us",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true
+      }
+    }
+  },
+  "order": [
+    "94d7e11f-1e5b-4b43-8daa-42b86d8ed097",
+    "84acbb1c-d522-4a01-817d-6f9fbc212e91",
+    "main",
+    "cd7d336c-eb3f-4b33-b254-18413d094b1b",
+    "b477b41a-3ca1-44b0-ac6c-5b0c272db9e2",
+    "7f2d94f5-b89a-4c1f-b2bc-a9948be8d365",
+    "f4f08417-9a09-4dd9-8fff-fd243bbca10b",
+    "0ab79e85-af1a-48f0-922c-884a26d6ba47",
+    "13463b01-7bdd-4ddc-91bb-aa3a59093dcf",
+    "dfb18f21-723c-4c28-9347-929e2fdcb7be"
+  ]
+}

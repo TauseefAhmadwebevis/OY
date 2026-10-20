@@ -1,0 +1,128 @@
+{{ 'section-landing-logo.css' | asset_url | stylesheet_tag }}
+{% render 'section-config' %}
+
+{% liquid
+  assign title = section.settings.title
+  assign text = section.settings.text
+  assign info = section.settings.info
+%}
+{% style %}
+  .section-{{ section.id }} .section-landing-logo__image {
+    max-width: {{ section.settings.max_width }}px;
+  }
+  @media (max-width: 575px) {
+    .section-{{ section.id }} .section-landing-logo__image {
+      max-width: {{ section.settings.mobile_max_width }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="section-landing-logo__inner section-{{ section.id }} {{section.settings.sect_class}}">
+  {% if section.settings.image != blank %}
+    <a href="{{ routes.root_url }}" class="section-landing-logo__image" style="">
+      {{
+      section.settings.image
+      | image_url: width: 3840
+      | image_tag:
+      loading: 'lazy',
+      class: 'desktop',
+      width: section.settings.image.width,
+      alt: section.settings.image.alt
+      }}
+      {% if section.settings.image_mobile != blank %}
+        {{
+        section.settings.image_mobile
+        | image_url: width: 3840
+        | image_tag:
+        loading: 'lazy',
+        class: 'mobile',
+        width: section.settings.image_mobile.width,
+        alt: section.settings.image_mobile.alt
+        }}
+      {% endif %}
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Landing logo",
+  "tag": "section",
+  "class": "section-landing-logo",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 150,
+      "max": 250,
+      "step": 1,
+      "unit": "px",
+      "label": "Desktop logo max width",
+      "default": 198
+    },
+    {
+      "type": "range",
+      "id": "mobile_max_width",
+      "min": 100,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile logo max width",
+      "default": 150
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "text",
+      "id": "sect_class",
+      "label": "Custom class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing logo",
+      "category": "image"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{%- assign show_announcement = false -%}
+{%- assign announcement_block_count = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'announcement' -%}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% if show_announcement %}
+{% endif %}

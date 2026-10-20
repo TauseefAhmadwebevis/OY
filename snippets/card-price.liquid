@@ -1,0 +1,51 @@
+{% comment %}
+Renders the price shown on product cards / search results.
+
+Shows the price of the variant the PDP opens on
+(product.selected_or_first_available_variant), so the card always matches the
+PDP price. Compare-at / savings come from that same variant.
+
+Keep the JS equivalent in theme.js (theme.getCardPrice) in sync with this logic.
+
+Arguments
+- product: product object
+- [price_class]: optional class for a span wrapping the price
+- [show_savings]: boolean, defaults to settings.product_save_amount
+- [show_compare]: boolean, defaults to true (strike-through compare-at price)
+{% endcomment %}
+
+{%- liquid
+  assign card_variant = product.selected_or_first_available_variant
+  assign card_price = card_variant.price
+  assign compare_at = card_variant.compare_at_price | default: 0
+  assign on_sale = false
+  if compare_at > card_price
+    assign on_sale = true
+  endif
+
+  if show_savings == nil
+    assign show_savings = settings.product_save_amount
+  endif
+  if show_compare == nil
+    assign show_compare = true
+  endif
+-%}
+
+{%- if on_sale and show_compare -%}
+  <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+  <span class="grid-product__price--original">{{ compare_at | money }}</span>
+  <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+{%- endif -%}
+{%- if price_class != blank -%}<span class="{{ price_class }}">{%- endif -%}
+{{ card_price | money }}
+{%- if price_class != blank -%}</span>{%- endif -%}
+{%- if on_sale and show_savings -%}
+  {%- if settings.product_save_type == 'dollar' -%}
+    {%- capture saved_amount -%}{{ compare_at | minus: card_price | money }}{%- endcapture -%}
+  {%- else -%}
+    {%- capture saved_amount -%}{{ compare_at | minus: card_price | times: 100.0 | divided_by: compare_at | round }}%{%- endcapture -%}
+  {%- endif -%}
+  <span class="grid-product__price--savings">
+    {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
+  </span>
+{%- endif -%}

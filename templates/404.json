@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {}
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Popular picks",
+        "home_featured_products": "best-sellers",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured_collections_ctrdPU": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_eDx8jA": {
+          "type": "collection",
+          "settings": {
+            "collection": "ceramic-ornaments",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_QWTJQ3": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookie-jars",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_3CYXbE": {
+          "type": "collection",
+          "settings": {
+            "collection": "decorative-statues",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "collection_wTyb87": {
+          "type": "collection",
+          "settings": {
+            "collection": "candles",
+            "title": "",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "collection_eDx8jA",
+        "collection_QWTJQ3",
+        "collection_3CYXbE",
+        "collection_wTyb87"
+      ],
+      "settings": {
+        "title": "Collection list",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured-collection",
+    "featured_collections_ctrdPU"
+  ]
+}

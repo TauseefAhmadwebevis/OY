@@ -1,0 +1,181 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "announcement-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Memorial Day Sale ⚡ Extra 15% Off",
+            "link_text": "",
+            "link": "shopify://collections/memorial-themed"
+          }
+        },
+        "announcement_nDKhCq": {
+          "type": "announcement",
+          "settings": {
+            "text": "Over 150,000 Happy Customers",
+            "link_text": "",
+            "link": ""
+          }
+        },
+        "announcement_TQMYtM": {
+          "type": "announcement",
+          "settings": {
+            "text": "Officially BBB Accredited!",
+            "link_text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-0",
+        "announcement_nDKhCq",
+        "announcement_TQMYtM"
+      ],
+      "settings": {
+        "announcement_compact": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "header-0": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/ORNAMENTALLY_YOU_LOGO_3.png",
+            "desktop_logo_width": 220,
+            "mobile_logo_width": 180
+          }
+        }
+      },
+      "block_order": [
+        "header-0"
+      ],
+      "settings": {
+        "main_menu_link_list": "main-menu",
+        "hover_menu": false,
+        "mega_menu_images": false,
+        "main_menu_alignment": "left",
+        "header_style": "normal",
+        "sticky_index": false,
+        "sticky_collection": false,
+        "msg_homepage": "Over 150,000 Happy Customers",
+        "msg_collection_page": "Officially BBB Accredited!",
+        "msg_product_page": "Free U.S. Shipping > $30",
+        "toolbar_menu": "top-dektop",
+        "toolbar_social": true,
+        "drawer_logo": "shopify://shop_images/Close-Up_Version_OY_OrnamentallyYou_Initials_Logo.png",
+        "drawer_title": "HANDCRAFTED WITH LOVE",
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false
+      }
+    },
+    "countdown_j83Cbg": {
+      "type": "countdown",
+      "blocks": {
+        "content_DaUxDV": {
+          "type": "content",
+          "settings": {
+            "heading": "Today only: 40% off Stepping Stones!",
+            "heading_size": "h3",
+            "text": "",
+            "content_alignment": "center"
+          }
+        },
+        "timer_YNzb6M": {
+          "type": "timer",
+          "settings": {
+            "year": "2025",
+            "month": "09",
+            "day": "6",
+            "hour": "23",
+            "minute": "59",
+            "hide_timer": true,
+            "text": ""
+          }
+        },
+        "button_w4TCdx": {
+          "type": "button",
+          "settings": {
+            "button_link": "https://ornamentallyyou.com/collections/stepping-stones?utm_source=theme_timer",
+            "button": "Shop Collection",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "content_DaUxDV",
+        "timer_YNzb6M",
+        "button_w4TCdx"
+      ],
+      "disabled": true,
+      "name": "t:sections.countdown.presets.countdown.name",
+      "settings": {
+        "layout": "banner",
+        "full_width": true,
+        "text_color": "#ffffff",
+        "background_color": "#25564e",
+        "overlay_color": "#25564e",
+        "overlay_opacity": 100,
+        "lazyload_images": true
+      }
+    },
+    "17780884305f1d1c41": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_032e952_BdfDce": {
+          "type": "ai_gen_block_032e952",
+          "disabled": true,
+          "settings": {
+            "banner_image": "shopify://shop_images/Make_it_more_into_this_202605200329.jpg",
+            "desktop_width_percent": 100,
+            "border_radius": 0,
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 10,
+            "heading": "",
+            "subheading": "",
+            "text_alignment": "center",
+            "heading_size": 48,
+            "heading_color": "#ffffff",
+            "text_size": 18,
+            "text_color": "#ffffff",
+            "text_spacing": 15,
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_text_size": 16,
+            "button_padding": 12,
+            "button_border_radius": 4,
+            "button_color": "#cc3333",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#a32828"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_032e952_BdfDce"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "countdown_j83Cbg",
+    "17780884305f1d1c41"
+  ]
+}
