@@ -17,7 +17,8 @@
       "skip_to_content": "Skip to content",
       "close_modal": "Close (esc)",
       "close": "Close",
-      "learn_more": "Learn more"
+      "learn_more": "Learn more",
+      "zoom_image": "Zoom image"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
@@ -99,7 +100,8 @@
     },
     "slideshow": {
       "play_slideshow": "Play slideshow",
-      "pause_slideshow": "Pause slideshow"
+      "pause_slideshow": "Pause slideshow",
+      "slide_number": "Slide {{ slide_number }}"
     },
     "wonderment-featured-collection": {
       "sold_out": "Sold Out",
@@ -173,7 +175,9 @@
     "filters": {
       "title_tags": "Filter",
       "all_tags": "All products",
-      "categories_title": "Categories"
+      "categories_title": "Categories",
+      "price_min": "Minimum price",
+      "price_max": "Maximum price"
     }
   },
   "contact": {

@@ -15,7 +15,7 @@
       </span>
     {% else %}
       {% if part.title == paginate.current_page %}
-        <span class="page current">{{ part.title }}</span>
+        <span class="page current" aria-current="page">{{ part.title }}</span>
       {% else %}
         <span class="page">{{ part.title }}</span>
       {% endif %}

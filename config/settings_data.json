@@ -12,11 +12,11 @@
     "color_body_bg": "#ffffff",
     "color_body_text": "#000000",
     "color_price": "#1c1d1d",
-    "color_savings_text": "#c20000",
+    "color_savings_text": "#aa0000",
     "color_borders": "#e8e8e1",
     "color_button": "#cc3333",
     "color_button_text": "#ffffff",
-    "color_sale_tag": "#cc3333",
+    "color_sale_tag": "#aa0000",
     "color_cart_dot": "#cc3333",
     "color_small_image_bg": "#ffffff",
     "color_large_image_bg": "#0f0f0f",
@@ -109,11 +109,6 @@
       },
       "5439026248262864547": {
         "type": "shopify://apps/preorder-globo-back-in-stock/blocks/app-embed/e547a0ad-8212-4bcc-b02f-761faa9b8af2",
-        "disabled": false,
-        "settings": {}
-      },
-      "15551562133269743879": {
-        "type": "shopify://apps/codeinspire-accessibility-tool/blocks/app-embed/9c320235-d5d5-4e1c-baf6-809572578ea3",
         "disabled": false,
         "settings": {}
       },
@@ -233,6 +228,11 @@
       "9216205709425313739": {
         "type": "shopify://apps/kx-ai-collections/blocks/kimonix-merch-utils/019d29cf-e108-7d99-ad0d-3da0f2b408e1",
         "disabled": false,
+        "settings": {}
+      },
+      "15551562133269743879": {
+        "type": "shopify://apps/codeinspire-accessibility-tool/blocks/app-embed/9c320235-d5d5-4e1c-baf6-809572578ea3",
+        "disabled": true,
         "settings": {}
       }
     }

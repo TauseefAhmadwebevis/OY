@@ -15,7 +15,12 @@
     assign show_selectors = true
   endif
 -%}
-<div class="toolbar{% if overlay_header%} toolbar--transparent{% endif %} small--hide toolbar--mobile">
+{% comment %}
+  ADA: the toolbars render outside <header>, so each is a labelled region landmark
+  (axe "region"). Attributes go on the existing divs to keep the
+  `.toolbar + .header-sticky-wrapper` sibling CSS intact.
+{% endcomment %}
+<div class="toolbar{% if overlay_header%} toolbar--transparent{% endif %} small--hide toolbar--mobile" role="region" aria-label="Announcement">
   <div class="page-width">
     <div class="toolbar__content">
       <div class="toolbar__item" style="width: auto;">
@@ -36,7 +41,7 @@
     </div>
   </div>
 </div>
-<div class="toolbar{% if overlay_header%} toolbar--transparent{% endif %} small--hide">
+<div class="toolbar{% if overlay_header%} toolbar--transparent{% endif %} small--hide" role="region" aria-label="Store toolbar">
   <div class="page-width">
     <div class="toolbar__content">
       {%- if section.settings.toolbar_menu != blank -%}
