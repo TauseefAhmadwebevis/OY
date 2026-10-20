@@ -29,7 +29,7 @@
                 <input id="cus-serach" type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
               <button type="submit" class="text-link site-header__search-btn site-header__search-btn--submit">
                   <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
-                
+                  <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
                 </button>
     </form>
     {%- endif -%}
@@ -54,7 +54,7 @@
       <i aria-hidden="true" focusable="false" role="presentation" class="icon icon-swym-wishlist"></i>
       <span>Wishlist</span>
     </a>
-    <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+    <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart"{% if settings.cart_type == 'drawer' %} aria-controls="CartDrawer"{% endif %} data-icon="{{ settings.cart_icon }}">
       <span class="cart-link">
         {%- if settings.cart_icon == 'cart' -%}
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path style="fill:none;stroke-miterlimit:10;stroke-width:2px" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>

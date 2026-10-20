@@ -146,11 +146,13 @@
                 </div>
                 <input
                   class="price-range__input price-range__input-min"
+                  aria-label="{{ 'collections.filters.price_min' | t }}"
                   name="{{ filter.min_value.param_name }}"
                   value="{{ filter_min_value }}"
                   readonly>
                 <input
                   class="price-range__input price-range__input-max"
+                  aria-label="{{ 'collections.filters.price_max' | t }}"
                   name="{{ filter.max_value.param_name }}"
                   value="{{ filter_max_value }}"
                   readonly>

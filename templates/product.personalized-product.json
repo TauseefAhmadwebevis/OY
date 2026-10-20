@@ -39,7 +39,7 @@
         "custom_FQXEjP": {
           "type": "custom",
           "settings": {
-            "code": "<style>\n.pdp-customer-satisfaction {\ndisplay: flex; a\nlign-items: center;\ngap: 5px;\n}\n@media (max-width: 1024px)  {\n .pdp-customer-satisfaction p {\n    font-size: 13px;\n }\n}\n@media (max-width: 1023px)  {\n .pdp-customer-satisfaction {\njustify-content: center;\n}\n}\n@media (max-width: 810px)  {\n .pdp-customer-satisfaction p {\n    font-size: 12px;\n }\n}\n@media (max-width: 768px)  {\n .pdp-customer-satisfaction p {\n    font-size: 14px;\n }\n}\n</style>\n\n<div class=\"pdp-customer-satisfaction\" style=\"\">\n<img \nstyle=\"width: 25px; height: 25px;\" src=\"https://cdn.shopify.com/s/files/1/0427/9857/9867/files/icon-100.png?v=1731966019\" />\n<p style=\"margin: 0; \">Customer Satisfaction Guaranteed </p>\n\n</div>"
+            "code": "<style>\n.pdp-customer-satisfaction {\ndisplay: flex; a\nlign-items: center;\ngap: 5px;\n}\n@media (max-width: 1024px)  {\n .pdp-customer-satisfaction p {\n    font-size: 13px;\n }\n}\n@media (max-width: 1023px)  {\n .pdp-customer-satisfaction {\njustify-content: center;\n}\n}\n@media (max-width: 810px)  {\n .pdp-customer-satisfaction p {\n    font-size: 12px;\n }\n}\n@media (max-width: 768px)  {\n .pdp-customer-satisfaction p {\n    font-size: 14px;\n }\n}\n</style>\n\n<div class=\"pdp-customer-satisfaction\" style=\"\">\n<img   alt=\"satify Image\"\nstyle=\"width: 25px; height: 25px;\" src=\"https://cdn.shopify.com/s/files/1/0427/9857/9867/files/icon-100.png?v=1731966019\" />\n<p style=\"margin: 0; \">Customer Satisfaction Guaranteed </p>\n\n</div>"
           }
         },
         "d6b0e2bd-2728-4640-8e4b-fd770fab537d": {
@@ -315,6 +315,8 @@
         "loox-product-reviews": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "aggregated": false,
             "limit": 20,

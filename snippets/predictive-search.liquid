@@ -10,11 +10,11 @@
 <predictive-search data-context="{{ context }}" data-enabled="{{ settings.predictive_search_enabled }}" data-dark="{{ dark_search_bg }}">
   <div class="predictive__screen" data-screen></div>
   <form action="{{ routes.search_url }}" method="get" role="search">
-    <label for="Search" class="hidden-label">Search</label>
+    <label for="Search-{{ context }}" class="hidden-label">{{ 'general.search.placeholder' | t }}</label>
     <div class="search__input-wrap">
       <input
         class="search__input"
-        id="Search"
+        id="Search-{{ context }}"
         type="search"
         name="q"
         value="{{ search.terms | escape }}"
@@ -40,7 +40,8 @@
 
     <button class="btn--close-search">
       <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"/></svg>
+      <span class="icon__fallback-text">{{ 'general.accessibility.close' | t }}</span>
     </button>
-    <div id="predictive-search" class="search__results" tabindex="-1"></div>
+    <div id="predictive-search-{{ context }}" class="search__results" data-predictive-results tabindex="-1"></div>
   </form>
 </predictive-search>

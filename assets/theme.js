@@ -3231,7 +3231,8 @@ theme.recentlyViewed = {
       this.args.on = {
         ready: this.init.bind(this),
         change: this.slideChange.bind(this),
-        settle: this.afterChange.bind(this)
+        settle: this.afterChange.bind(this),
+        select: this.syncHiddenFocus.bind(this)
       };
   
       if (this.args.childNav) {
@@ -3301,7 +3302,8 @@ theme.recentlyViewed = {
     slideshow.prototype = Object.assign({}, slideshow.prototype, {
       init: function(el) {
         this.currentSlide = this.el.querySelector(selectors.currentSlide);
-  
+        this.syncHiddenFocus();
+
         // Optional onInit callback
         if (this.args.callbacks && this.args.callbacks.onInit) {
           if (typeof this.args.callbacks.onInit === 'function') {
@@ -3353,6 +3355,31 @@ theme.recentlyViewed = {
         if (this.args.childNav) {
           this.childNavGoTo(this.slideshow.selectedIndex);
         }
+      },
+      // ADA: Flickity sets aria-hidden on off-screen slides, so their links/buttons
+      // must leave the tab order too (axe "aria-hidden-focus"). Original tabindex is
+      // stashed in data-a11y-tabindex and restored when the slide is shown again.
+      // Uses the DOM rather than this.slideshow, which isn't assigned yet on 'ready'.
+      syncHiddenFocus: function() {
+        var focusable = 'a[href], area[href], button, input, select, textarea, iframe, summary, [tabindex]';
+        this.el.querySelectorAll('.flickity-slider > *').forEach(function(cell) {
+          var hidden = cell.getAttribute('aria-hidden') === 'true';
+          cell.querySelectorAll(focusable).forEach(function(el) {
+            var stashed = el.hasAttribute('data-a11y-tabindex');
+            if (hidden && !stashed) {
+              el.setAttribute('data-a11y-tabindex', el.getAttribute('tabindex') || '');
+              el.setAttribute('tabindex', '-1');
+            } else if (!hidden && stashed) {
+              var original = el.getAttribute('data-a11y-tabindex');
+              if (original === '') {
+                el.removeAttribute('tabindex');
+              } else {
+                el.setAttribute('tabindex', original);
+              }
+              el.removeAttribute('data-a11y-tabindex');
+            }
+          });
+        });
       },
       destroy: function() {
         if (this.args.childNav && this.childNavLinks.length) {
@@ -4003,7 +4030,7 @@ theme.recentlyViewed = {
       this.enabled = this.getAttribute('data-enabled');
       this.context = this.getAttribute('data-context');
       this.input = this.querySelector('input[type="search"]');
-      this.predictiveSearchResults = this.querySelector('#predictive-search');
+      this.predictiveSearchResults = this.querySelector('[data-predictive-results]');
       this.closeBtn = this.querySelector('.btn--close-search');
       this.screen = this.querySelector('[data-screen]');
       this.SearchModal = this.closest('#SearchModal') || null;

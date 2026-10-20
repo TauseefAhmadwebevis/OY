@@ -221,7 +221,16 @@
               </div>
 
               {%- if link_slide -%}
-                <a href="{{ block.settings.link }}" class="hero__slide-link" aria-hidden="true"></a>
+                {%- liquid
+                  assign slide_link_label = block.settings.title | strip_html | strip
+                  if slide_link_label == blank
+                    assign slide_link_label = block.settings.image.alt | default: block.settings.link_text
+                  endif
+                  if slide_link_label == blank
+                    assign slide_link_label = 'sections.slideshow.slide_number' | t: slide_number: forloop.index
+                  endif
+                -%}
+                <a href="{{ block.settings.link }}" class="hero__slide-link" aria-label="{{ slide_link_label | escape }}"></a>
               {%- endif -%}
 
               {%- if hero_text -%}
