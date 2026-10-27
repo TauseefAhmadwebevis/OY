@@ -4,6 +4,19 @@
 {%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
 {%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
 
+{%- comment -%}
+  Preload the two faces used above the fold so text doesn't wait on CSS parsing to discover them.
+  Bold/italic stay on normal discovery so they don't compete with the hero image.
+{%- endcomment -%}
+{%- assign header_font_url = header_font | font_url -%}
+{%- assign base_font_url = base_font | font_url -%}
+{%- unless header_font.system? -%}
+  <link rel="preload" as="font" href="{{ header_font_url }}" type="font/woff2" crossorigin>
+{%- endunless -%}
+{%- unless base_font.system? or base_font_url == header_font_url -%}
+  <link rel="preload" as="font" href="{{ base_font_url }}" type="font/woff2" crossorigin>
+{%- endunless -%}
+
 {%- style -%}
   {{ header_font | font_face: font_display: 'swap' }}
   {{ base_font | font_face: font_display: 'swap' }}

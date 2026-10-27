@@ -67,9 +67,32 @@
         {%- endstyle -%}
       {%- endif -%}
 
+      {%- liquid
+        # Perf (LCP): the first slide of the top section is the LCP element, so it loads eagerly
+        # with high priority and is shown before theme.js runs (see .hero--lcp in theme.css)
+        assign is_lcp_hero = false
+        if section.index == 1
+          assign is_lcp_hero = true
+        endif
+        assign eager_first_slide = is_lcp_hero
+        if section.settings.lazyload_images == false
+          assign eager_first_slide = true
+        endif
+
+        # Fixed mobile heights crop the image with object-fit: cover, so it can render wider than the screen
+        assign mobile_height_px = 0
+        if section.settings.mobile_height contains 'px'
+          assign mobile_height_px = section.settings.mobile_height | remove: 'px' | plus: 0
+        endif
+
+        # Only CSS widths go in sizes; the browser applies device pixel ratio itself, so these widths cover 2x screens
+        assign desktop_widths = '800, 1100, 1500, 1800, 2200, 2600, 3000, 3840'
+        assign mobile_widths = '400, 600, 800, 1000, 1200, 1500, 1800'
+      -%}
+
       <div class="{% if natural_height %}hero-natural--{{ section.id }}{% endif %}{% if natural_mobile_height %} hero-natural-mobile--{{ section.id }}{% endif %}">
         <div id="Slideshow-{{ section.id }}"
-          class="hero hero--{{ section.settings.section_height }} hero--{{ section.id }} hero--mobile--{{ section.settings.mobile_height }} loading loading--delayed"
+          class="hero hero--{{ section.settings.section_height }} hero--{{ section.id }} hero--mobile--{{ section.settings.mobile_height }}{% if is_lcp_hero %} hero--lcp{% endif %} loading loading--delayed"
           {% if natural_height %}
             data-natural="true"
           {% endif %}
@@ -166,38 +189,84 @@
 
                   {%- if block.settings.image != blank -%}
 
-                    {% comment %} Full width images so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+                    {% comment %}
+                      One <picture> instead of two <img>s toggled with small--hide/medium-up--hide,
+                      so an eager first slide doesn't make every visitor download both files.
+                    {% endcomment %}
                     {%- liquid
-                      if forloop.index == 1
-                        assign loading = section.settings.lazyload_images
-                      else
-                        assign loading = true
+                      assign loading = 'lazy'
+                      assign fetchpriority = 'auto'
+                      if forloop.first and eager_first_slide
+                        assign loading = 'eager'
+                        if is_lcp_hero
+                          assign fetchpriority = 'high'
+                        endif
                       endif
+
+                      assign mobile_img = block.settings.image
+                      if has_mobile_image
+                        assign mobile_img = block.settings.image_mobile
+                      endif
+
+                      assign mobile_sizes = '100vw'
+                      if mobile_height_px > 0
+                        assign cover_width = mobile_img.aspect_ratio | times: mobile_height_px | ceil
+                        assign cover_breakpoint = cover_width
+                        if cover_breakpoint > 768
+                          assign cover_breakpoint = 768
+                        endif
+                        assign mobile_sizes = '(max-width: ' | append: cover_breakpoint | append: 'px) ' | append: cover_width | append: 'px, 100vw'
+                      endif
+
+                      assign desktop_sizes = '100vw'
+                      unless has_mobile_image
+                        assign desktop_sizes = mobile_sizes
+                      endunless
                     -%}
 
-                    {% if has_mobile_image %}
-                      {% assign desktop_classes = 'small--hide hero__image hero__image--' | append: block.id %}
-                    {% else %}
-                      {% assign desktop_classes = 'hero__image hero__image--' | append: block.id %}
-                    {% endif %}
-
-                    {%- render 'image-element',
-                      img: block.settings.image,
-                      img_width: 2400,
-                      loading: loading,
-                      classes: desktop_classes,
-                    -%}
-
+                    {%- capture desktop_srcset -%}{% render 'srcset-widths', img: block.settings.image, widths: desktop_widths %}{%- endcapture -%}
                     {%- if has_mobile_image -%}
-                      {% assign mobile_classes = 'medium-up--hide hero__image hero__image--' | append: block.id %}
-
-                      {%- render 'image-element',
-                        img: block.settings.image_mobile,
-                        img_height: 1200,
-                        loading: loading,
-                        classes: mobile_classes,
-                      -%}
+                      {%- capture mobile_srcset -%}{% render 'srcset-widths', img: block.settings.image_mobile, widths: mobile_widths %}{%- endcapture -%}
                     {%- endif -%}
+
+                    {%- if forloop.first and is_lcp_hero -%}
+                      {% comment %}
+                        layout/theme.liquid lifts everything between these markers into the top of <head>,
+                        so the hero starts downloading before ~300KB of head/header HTML is parsed.
+                        Same srcset/sizes as the <picture> below so the browser reuses the preloaded file.
+                      {% endcomment %}
+                      <!--LCP_PRELOAD_START
+                      {%- if has_mobile_image -%}
+                        <link rel="preload" as="image" fetchpriority="high" media="(max-width: 768px)" imagesrcset="{{ mobile_srcset }}" imagesizes="{{ mobile_sizes }}">
+                        <link rel="preload" as="image" fetchpriority="high" media="(min-width: 769px)" imagesrcset="{{ desktop_srcset }}" imagesizes="{{ desktop_sizes }}">
+                      {%- else -%}
+                        <link rel="preload" as="image" fetchpriority="high" imagesrcset="{{ desktop_srcset }}" imagesizes="{{ desktop_sizes }}">
+                      {%- endif -%}
+                      LCP_PRELOAD_END-->
+                    {%- endif -%}
+
+                    <image-element data-aos="image-fade-in">
+                      <picture>
+                        {%- if has_mobile_image -%}
+                          <source
+                            media="(max-width: 768px)"
+                            srcset="{{ mobile_srcset }}"
+                            sizes="{{ mobile_sizes }}"
+                            width="{{ block.settings.image_mobile.width }}"
+                            height="{{ block.settings.image_mobile.height }}">
+                        {%- endif -%}
+                        <img
+                          src="{{ block.settings.image | image_url: width: 1500 }}"
+                          srcset="{{ desktop_srcset }}"
+                          sizes="{{ desktop_sizes }}"
+                          width="{{ block.settings.image.width }}"
+                          height="{{ block.settings.image.height }}"
+                          alt="{{ block.settings.image.alt | escape }}"
+                          loading="{{ loading }}"
+                          fetchpriority="{{ fetchpriority }}"
+                          class="hero__image hero__image--{{ block.id }} image-element">
+                      </picture>
+                    </image-element>
 
                   {%- else -%}
                     {%- if template == 'password' -%}

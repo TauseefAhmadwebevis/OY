@@ -4,6 +4,8 @@ Arguments
 - [per_row]: number of items per row
 - [quick_shop_enable]: boolean
 - [collection]: collection object
+- [sizes]: sizes attribute for the card image (see product-grid-sizes)
+- [loading]: 'eager' for above-the-fold cards (first row), otherwise lazy
 {% endcomment %}
 
 {%- liquid
@@ -96,7 +98,10 @@ Arguments
                 sizes: sizes,
                 sizeVariable: sizeVariable,
                 fallback: fallback,
-                widths: '360, 540, 720, 900, 1080',
+                widths: '200, 300, 400, 540, 720, 900, 1080',
+                img_width: 540,
+                loading: loading,
+                quality: 75,
               -%}
             {%- else -%}
               {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
@@ -119,7 +124,10 @@ Arguments
                 sizes: sizes,
                 sizeVariable: sizeVariable,
                 fallback: fallback,
-                widths: '360, 540, 720, 900, 1080',
+                widths: '200, 300, 400, 540, 720, 900, 1080',
+                img_width: 540,
+                loading: loading,
+                quality: 75,
               -%}
             {%- else -%}
               {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
@@ -143,6 +151,7 @@ Arguments
               sizeVariable: sizeVariable,
               fallback: fallback,
               widths: '360, 540, 720, 1000',
+              quality: 75,
             -%}
           </div>
         {%- endif -%}

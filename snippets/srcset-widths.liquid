@@ -1,0 +1,24 @@
+{% comment %}
+  Outputs a srcset value for an image, skipping widths larger than the original
+  so the browser never gets two candidates that point at the same file.
+  - img (Required - Image object)
+  - widths (Required - comma separated string, ascending, e.g. '800, 1200, 1800')
+{% endcomment %}
+{%- liquid
+  assign width_list = widths | split: ','
+  assign max_width = width_list | last | strip | plus: 0
+  if img.width < max_width
+    assign max_width = img.width
+  endif
+
+  for w in width_list
+    assign w_num = w | strip | plus: 0
+    if w_num < max_width
+      echo img | image_url: width: w_num
+      echo ' ' | append: w_num | append: 'w, '
+    endif
+  endfor
+
+  echo img | image_url: width: max_width
+  echo ' ' | append: max_width | append: 'w'
+-%}

@@ -16,6 +16,7 @@
      - role (Optional - String)
      - aria-hidden (Optional - Boolean)
      - style (Optional - String)
+     - quality (Optional - Number 1-100) Shopify CDN compression; ignored when preload is true
   - Builds out image tags for hosted files
     - Parameters:
       - asset (Required - String url)
@@ -40,6 +41,7 @@
       - classes (Optional - String)
       - alt (Optional - String)
       - widths (Optional - String)
+      - priority (Optional - Boolean) LCP image: eager, fetchpriority high, preloaded in <head>
 
   https://shopify.dev/api/liquid/filters#image_tag
   https://shopify.dev/api/liquid/filters#image_url
@@ -94,6 +96,12 @@
 <image-element data-aos="image-fade-in" data-hulkapps-lineitem >
 
 {% if type == blank %}
+  {%- comment -%}
+    image_url has no quality argument, but the Shopify CDN honours a quality URL param.
+    Inject it into src + every srcset entry. Skipped for preload, since the preload Link
+    header would point at the un-suffixed URL and the image would download twice.
+  {%- endcomment -%}
+  {% capture image_markup %}
   {% if widths != blank %}
     {% if img_width == blank %}
       {% assign img_width = widths | split: ',' | last %}
@@ -132,19 +140,45 @@
                   style: style
     }}
   {% endif %}
+  {% endcapture %}
+  {% if quality != blank and preload != true %}
+    {% assign quality_param = '&amp;quality=' | append: quality | append: '&amp;width=' %}
+    {{ image_markup | replace: '&amp;width=', quality_param }}
+  {% else %}
+    {{ image_markup }}
+  {% endif %}
 {% elsif type == 'photoswipe' %}
   {% assign widthsArray = widths | split: ',' %}
+  {%- liquid
+    # Same CDN quality param as above, on the displayed sizes only (the zoom image keeps full quality)
+    assign quality_param = '&width='
+    if quality != blank
+      assign quality_param = '&quality=' | append: quality | append: '&width='
+    endif
+  -%}
   {%- capture img_widths -%}
     {% for width in widthsArray %}
-      {{ media | image_url: width: width }} {{ width | append: 'w' }},
+      {{ media | image_url: width: width | replace: '&width=', quality_param }} {{ width | append: 'w' }},
     {% endfor %}
   {%- endcapture -%}
   {% assign img_width = widthsArray | last %}
-  <img src="{{ img | image_url: width: img_width }}"
+  {%- if priority -%}
+    {%- comment -%}
+      Perf (LCP): main PDP image. layout/theme.liquid lifts the preload between these markers into
+      the top of <head>. Same srcset/sizes as the <img> below so the preloaded file is reused.
+    {%- endcomment -%}
+    {%- capture priority_srcset -%}
+      {%- for width in widthsArray -%}{{ media | image_url: width: width | replace: '&width=', quality_param }} {{ width | strip | append: 'w' }}{% unless forloop.last %}, {% endunless %}{%- endfor -%}
+    {%- endcapture -%}
+    <!--LCP_PRELOAD_START
+    <link rel="preload" as="image" fetchpriority="high" imagesrcset="{{ priority_srcset }}" imagesizes="{{ sizes }}">
+    LCP_PRELOAD_END-->
+  {%- endif -%}
+  <img src="{{ img | image_url: width: img_width | replace: '&width=', quality_param }}"
     width
     height
     class="{{ classes }}"
-    loading="lazy"
+    {% if priority %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
     alt="{{ alt }}"
     srcset="{{ img_widths }}"
     data-photoswipe-src="{{ img | image_url: width: product_zoom_size, format: format }}"

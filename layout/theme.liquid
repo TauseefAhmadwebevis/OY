@@ -2,26 +2,35 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
   <head>
-<script type="text/javascript" data-squaredance="amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXShPzdUjiYW7iwnBi52phVV" data-sqdv="1.0.1">
-try{squaredanceCart=JSON.parse(decodeURIComponent("{{cart.items|json|url_encode}}"))}catch(e){}
-;!function(j,u,m,b,l,e){var n="jumbleberry",i="3.2.3",o=function(){o.v==i&&o.e?o.e.apply(o,arguments):o.q.push(arguments)}
-,a=encodeURIComponent,t=decodeURIComponent,d=j.location;(o.push=o).l=!1,o.q=[],o.v=i,o.duid=function(n){return(
-n=n&&u.cookie.match(RegExp(t("%5Cs*")+n.substr(0,21)+"id=([^;]+)")))?t(n[1].split(".")[0]):""},o.g=function(n,i){return!!(
-i=RegExp("^[^#]*[?&]"+n+"=([^&#]+)").exec(i||d.href))&&t(i[1].replace(/\+/g," "))},o.s=function(n){for(var i=Math.round((
-new Date).getTime()/1e3),t=d.hostname.split("."),r=t.length-1;0<r--&&/^(([a-z0-9]{4}-?){8}|[0-9]+)$/i.test(n)&&n!=o.duid(
-o.p);)u.cookie=o.p.substr(0,21)+"id="+a(n)+"."+i+".0."+i+".; path=/; max-age=63072000; domain=."+t.slice(r,t.length
-).join(".")},o.i=function(n,i,t){if("init"==n)return[o.u=o.duid(o.p=i),o.s(o.h=t||o.u)];t=t||{},(n=u.createElement(
-"iframe")).src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&event="+a(i||"")+"&transid="+a(t.transaction_id||"")+"&oi="+a(
-t.order_index||"")+"&ctx="+a(JSON.stringify(t)),n.height=n.width=0,n.style="display:none;visibility:hidden",
-n.sandbox="allow-forms allow-same-origin allow-scripts",n.referrerPolicy="unsafe-url",(u.body||u.head).appendChild(n)},
-o.m=o.e=function(){var n,i;!j._RNGSeed&&o.i.apply(o,arguments)&&(n=u.createElement(m),i=u.getElementsByTagName(m)[0],
-n.src=o.d+o.p+"?hid="+a(o.h)+"&uid="+a(o.u)+"&v="+o.v,n.async=!!o.h,o.e=!1,o.q.unshift(arguments),j.addEventListener(
-"beforeunload",n.onerror=function(){o.e=o.i;for(var n=0;n<o.q.length;++n)o.apply(o,o.q[n]);o.q=[]}),
-i.parentNode.insertBefore(n,i))},j[n]=j[n]||o,j[n].d=b}(window,document,"script","https://www.maxepv.com/");
+    {%- comment -%}
+      Perf: charset and viewport first, so the browser sees them within the first 1024 bytes.
+    {%- endcomment -%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-jumbleberry("init", "amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXSCsrlTp5-zLheUTNFm04idouHOF_WaAuRBFx-pUJHQCTwu0Ls3K7RG7YzDbyPM5oY~", jumbleberry.g("sqdid") || jumbleberry.g("click_id"));
-</script>
-        <!-- heatmap.com snippet -->
+    {%- comment -%}
+      Perf (LCP): sections/slideshow.liquid marks the hero preload links with LCP_PRELOAD comments.
+      Sections render before the layout, so pull them up here, ahead of the tracking scripts below.
+    {%- endcomment -%}
+    {%- if content_for_layout contains 'LCP_PRELOAD_START' -%}
+      {%- assign lcp_preload = content_for_layout | split: 'LCP_PRELOAD_START' -%}
+      {{- lcp_preload[1] | split: 'LCP_PRELOAD_END' | first -}}
+    {%- endif -%}
+    {%- liquid
+      # Perf: heatmap tracker in <head>. Toggle:
+      #   'delayed'  = run once, after window load + a few seconds or on the first scroll/touchstart/keydown/mousemove, whichever comes first
+      #   'original' = the original inline snippet, run during <head> parsing exactly as before (use this to revert)
+      #   'off'      = not output at all
+      # Delayed trackers miss visitors who leave before the trigger, so compare data before/after.
+      assign heatmap_load = 'delayed'
+    -%}
+
+{%- comment -%}
+  heatmap.com. To revert: set heatmap_load = 'original' above (the original snippet is kept unchanged in that branch).
+  Jumbleberry (maxepv.com) was removed from this file on purpose. It is in git history if it is ever needed again.
+{%- endcomment -%}
+{%- if heatmap_load == 'original' %}
+<!-- heatmap.com snippet -->
     <script>
       (function() {
         var _heatmap_paq = window._heatmap_paq = window._heatmap_paq || [];
@@ -40,20 +49,49 @@ jumbleberry("init", "amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXSCsrlTp5-zLheUTNF
       })();
     </script>
     <!-- End heatmap.com snippet Code -->
+{%- elsif heatmap_load == 'delayed' %}
+<!-- heatmap.com snippet (delayed, interaction only) -->
+    <script>
+      (function () {
+        var started = false;
+        function startHeatmap() {
+          if (started) return;
+          started = true;
+          var _heatmap_paq = window._heatmap_paq = window._heatmap_paq || [];
+          var heatUrl = window.heatUrl = 'https://dashboard.heatmap.com/';
+          function load(url, cb) {
+            var s = document.createElement('script');
+            s.src = url; s.async = true;
+            // onerror too: the original fell back to heatmap-light when the preprocessor hadn't set up the queue
+            if (cb) s.onload = s.onerror = cb;
+            document.head.appendChild(s);
+          }
+          // DOMContentLoaded has already fired by now, so the original fallback check runs once the preprocessor settles
+          load(heatUrl + 'preprocessor.min.js?sid=1641', function () {
+            if (typeof _heatmap_paq != 'object' || _heatmap_paq.length == 0) {
+              _heatmap_paq.push(['setTrackerUrl', heatUrl + 'sttracker.php']);
+              load(heatUrl + 'heatmap-light.min.js?sid=1641');
+            }
+          });
+        }
+        // Interaction only. To also start after a delay, add this line below:
+        // window.addEventListener('load', function () { setTimeout(startHeatmap, 4000); });
+        ['scroll', 'touchstart', 'keydown', 'mousemove'].forEach(function (e) {
+          window.addEventListener(e, startHeatmap, { once: true, passive: true });
+        });
+      })();
+    </script>
+    <!-- End heatmap.com snippet Code -->
+{%- endif %}
 
     {% render 'revenueRoll-GTM' %}
 
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{ settings.color_button }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
-    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
-    <link rel="dns-prefetch" href="https://maps.googleapis.com">
-    <link rel="dns-prefetch" href="https://maps.gstatic.com">
 
     {%- if settings.favicon != blank -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
@@ -129,7 +167,9 @@ jumbleberry("init", "amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXSCsrlTp5-zLheUTNF
     <script src="{{ 'vendor-scripts-v11.js' | asset_url | split: '?' | first }}" defer="defer"></script>
 
     {%- if shop.enabled_currencies.size > 1 -%}
-      <link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}">
+      {%- comment -%} Flags only show inside the currency selector, so don't block first render on them {%- endcomment -%}
+      <link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}" media="print" onload="this.media='all'">
+      <noscript><link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}"></noscript>
     {%- endif -%}
 
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
@@ -145,16 +185,26 @@ jumbleberry("init", "amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXSCsrlTp5-zLheUTNF
     {% endif %}
     {% render 'rapid-search-settings' %}
 
-    {{ shop.metafields.loox.global_html_head }}
-    {% render 'edt_p' %}
+    {%- comment -%}
+      Perf: Loox global scripts only serve the product page reviews/rating blocks.
+      To revert: remove the template check.
+    {%- endcomment -%}
+    {% if template.name == 'product' %}
+      {{ shop.metafields.loox.global_html_head }}
+    {% endif %}
+    {%- comment -%}
+      Perf: estimated-delivery data + flagBs.js (~390KB of base64 flags) only serve the product page widget.
+      To revert: remove the template check.
+    {%- endcomment -%}
+    {% if template.name == 'product' %}
+      {% render 'edt_p' %}
+    {% endif %}
     {% render 'gsf-conversion-pixels' %}
 
     {% include 'hulk_po_vd.liquid' %}
     {% if handle contains '-kmnx-vt-' %}
       <meta name="robots" content="noindex">
     {% endif %}
-
-    {% render 'schema-organization-website' %}
   </head>
 
   <body
@@ -213,27 +263,40 @@ jumbleberry("init", "amYhh0syb62JHzdAKaPh_h5RA5i_qqibUXthaojnCXSCsrlTp5-zLheUTNF
 
     {%- render 'cro-express-pay' -%}
 
-    {{ shop.metafields.loox.global_html_body }}
+    {% if template.name == 'product' %}
+      {{ shop.metafields.loox.global_html_body }}
+    {% endif %}
     {% include 'swymSnippet' %}
 
-    {% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+    {%- comment -%}
+      Perf: quantity breaks only needed on product and cart pages.
+      To revert: remove the template check. If the quantity discount UI is missing on another page type, add it to the condition.
+    {%- endcomment -%}
+    {% if template.name == 'product' or template.name == 'cart' %}
+      {% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+    {% endif %}
     {% render 'globo.preorder.custom' %}
+
+    {%- comment -%}
+      Moved inside <body>: these used to sit after </html>, which is invalid HTML.
+    {%- endcomment -%}
+    {%- if template.name == 'collection' -%}
+      <div id="kimonix_none_display_description_fix_variation_tests" style="display: none;">{{ collection.description }}</div>
+    {%- endif -%}
+
+    {% if content_for_header contains 'kimonix_void_script' %}
+      <script
+        async
+        id="kimonix_elements_script"
+        src="https://api.kimonix.com/kimonix_elements.js?shop=ornamentallyyou.myshopify.com"
+      ></script>
+    {% endif %}
+
+    <script>
+      window.ALBSS = {
+        event_key: 'a86095bb-002b-46a7-b9d6-e0e7ee36b895'
+      };
+    </script>
+    <script src="https://c.albss.com/p/l/loader.iife.js" async></script>
   </body>
 </html>
-
-<div id="kimonix_none_display_description_fix_variation_tests" style="display: none;">{{ collection.description }}</div>
-
-{% if content_for_header contains 'kimonix_void_script' %}
-  <script
-    async
-    id="kimonix_elements_script"
-    src="https://api.kimonix.com/kimonix_elements.js?shop=ornamentallyyou.myshopify.com"
-  ></script>
-{% endif %}
-
-<script>
-  window.ALBSS = {
-    event_key: 'a86095bb-002b-46a7-b9d6-e0e7ee36b895'
-  };
-</script>
-<script src="https://c.albss.com/p/l/loader.iife.js" async></script>

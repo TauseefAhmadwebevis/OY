@@ -13,12 +13,23 @@
       if section.blocks.size > 0
         assign isEmpty = false
       endif
+
+      # Perf: first row on phones (2 tiles) loads eagerly when this section is near the top of the page.
+      # Homepage: the mobile-only copy is section 3 (under the hero and reviews line); the desktop-only copy is section 5 and stays lazy.
+      assign eager_tiles = 0
+      if section.index <= 3
+        assign eager_tiles = 2
+      endif
     -%}
 
     {%- for block in section.blocks -%}
       {%- liquid
         assign collection = collections[block.settings.collection]
         assign background_position = block.settings.focal_point
+        assign tile_loading = 'lazy'
+        if forloop.index <= eager_tiles
+          assign tile_loading = 'eager'
+        endif
 
         capture gridView
           if section.blocks.size < section.settings.per_row
@@ -37,7 +48,8 @@
         background_position: background_position,
         per_row: section.settings.per_row,
         sizeVariable: gridView,
-        fallback: 'variable'
+        fallback: 'variable',
+        loading: tile_loading
       -%}
     {%- endfor -%}
 

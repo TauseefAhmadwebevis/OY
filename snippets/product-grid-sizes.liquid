@@ -1,0 +1,24 @@
+{% comment %}
+  Outputs a sizes value for product card images that matches the real card width,
+  instead of the generic 25vw / 50vw from sizes-explicit (which over-fetches on wide screens).
+  Based on .page-width (max 1500px, 40px side padding on desktop, 17px on mobile) and .grid gutters (22px / 17px).
+  - per_row (Required - Number, desktop cards per row)
+  - column (Optional - Number, share of .page-width the grid sits in, e.g. 0.8 next to the 1/5 filter sidebar. Default 1)
+  - mobile (Optional - String, mobile size. Default half the screen minus gutters)
+{% endcomment %}
+{%- liquid
+  assign per_row = per_row | times: 1
+  assign column = column | default: 1
+  assign max_px = 1442 | times: column | times: 1.0 | divided_by: per_row | minus: 22 | ceil
+
+  if mobile == blank
+    assign mobile = 'calc(50vw - 26px)'
+    if per_row == 2
+      assign mobile = 'calc(100vw - 34px)'
+    endif
+  endif
+
+  echo '(min-width: 1500px) ' | append: max_px | append: 'px, '
+  echo '(min-width: 769px) calc((100vw - 58px) * ' | append: column | append: ' / ' | append: per_row | append: ' - 22px), '
+  echo mobile
+-%}
