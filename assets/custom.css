@@ -10,6 +10,18 @@
 }
 }
 
+@media (max-width: 1074px) {
+  .incubate-collections-add-to-cart-button-super-container {
+    flex-wrap: wrap !important;
+  }
+
+  .incubate-collections-add-to-cart-quantity-selector-container,
+  .incubate-collections-add-to-cart-add-to-cart-button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
 /* =====================================================================
    CRO: Shop Pay express checkout (cart drawer)
    Markup: snippets/cro-express-pay.liquid (<template>), cloned by
@@ -71,3 +83,19 @@
 .cro-variant-shoppay .cro-express-pay { display: block; }
 .cro-variant-shoppay .cro-checkout-row > :not(.rebuy-cart__checkout-button):not(.cro-express-pay) { flex: 0 0 100%; }
 */
+
+/* Toolbar static message: one line, centred on the page on large screens.
+   Side items share the leftover space equally so uneven side widths don't shift the message. */
+@media (min-width: 1200px) {
+  .toolbar__content > .toolbar__item:not(:has(> .announcement-text)) {
+    flex: 1 1 0;
+    width: auto;
+  }
+  .toolbar__item:has(> .announcement-text) {
+    flex: 0 1 max-content;
+    width: auto;
+  }
+  .toolbar .announcement-text {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "help-faq-banner",
+      "settings": {
+        "heading": "Shipping",
+        "overlay_opacity": 30,
+        "height_desktop": 360,
+        "height_mobile": 220,
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "content": {
+      "type": "help-shipping-content",
+      "blocks": {
+        "intro": {
+          "type": "intro",
+          "settings": {
+            "text": "<p>We make shipping a very easy and predictable process. We'll even explain it to you in bullet points!</p>"
+          }
+        },
+        "shipping_rates": {
+          "type": "content_section",
+          "settings": {
+            "heading": "Shipping Rates",
+            "body": "<p>Our shipping rates generally depend on the total weight of your order. Additionally, listed below are the starting rates depending on your location.</p><ul><li><strong>United States:</strong> starts at $3.99 for first order, and $1.99 every next order</li><li><strong>Canada:</strong> starts at $8.00 first order, and $2.00 every next order</li><li><strong>Rest of the World:</strong> starts at $11 first order, and $3.00 every next order</li></ul><ul><li>All US orders over $30 ship free</li><li>All Canada orders over $60 ship $10 flat</li><li>All International (Rest of the World) orders over $60 ship $20 flat</li></ul>"
+          }
+        },
+        "shipping_times": {
+          "type": "content_section",
+          "settings": {
+            "heading": "Shipping Times",
+            "body": "<p>All orders are processed and complete by 1-3 business days. Due to the unpredictable nature of weather, holiday delays, and internal carrier issues, all shipping times are approximate.</p><ul><li><strong>United States:</strong> Delivered within 1-4 business days</li><li><strong>Canada:</strong> Delivered within 1-2 weeks</li><li><strong>Rest of the World:</strong> Delivered within 1-3+ weeks</li></ul>"
+          }
+        },
+        "shipping_information": {
+          "type": "content_section",
+          "settings": {
+            "heading": "Shipping Information",
+            "body": "<ul><li>All orders are shipped with USPS First Class Package</li><li>All orders are shipped with a safe Poly Bubble Mailer to avoid breakage</li><li>All orders lost and damaged are refundable</li></ul>"
+          }
+        },
+        "contact_note": {
+          "type": "contact_note",
+          "settings": {
+            "text": "<p>For questions and inquiries please contact us at <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "intro",
+        "shipping_rates",
+        "shipping_times",
+        "shipping_information",
+        "contact_note"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "content"
+  ]
+}

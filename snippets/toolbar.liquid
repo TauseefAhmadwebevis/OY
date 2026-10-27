@@ -34,6 +34,10 @@
         {% assign static_text = static_msg_homepage %}
       {% endif %}
       <div class="toolbar__item" style="width: 100%;">
+        {%- if static_text contains '[review_count]' -%}
+          {%- capture review_count -%}{%- render 'review-count' -%}{%- endcapture -%}
+          {%- assign static_text = static_text | replace: '[review_count]', review_count -%}
+        {%- endif -%}
         <span class="announcement-text">{{ static_text }}</span>
       </div>
       <div class="toolbar__item" style="width: auto;">
@@ -67,6 +71,10 @@
         {% assign static_text = static_msg_homepage %}
       {% endif %}
       <div class="toolbar__item">
+        {%- if static_text contains '[review_count]' -%}
+          {%- capture review_count -%}{%- render 'review-count' -%}{%- endcapture -%}
+          {%- assign static_text = static_text | replace: '[review_count]', review_count -%}
+        {%- endif -%}
         <span class="announcement-text">{{ static_text }}</span>
       </div>
 

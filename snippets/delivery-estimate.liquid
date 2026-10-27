@@ -1,0 +1,238 @@
+{%- comment -%}
+  CRO: PDP delivery date certainty above ATC.
+  "Order by [cutoff], arrives [window]" – dates are calculated client-side in the
+  store time zone (America/New_York) so cached pages stay accurate.
+  Rendered from snippets/product-form.liquid.
+  Settings (cutoff, handling, transit, holidays) live on the buy_buttons block
+  in sections/main-product.liquid. The holiday list is the "Non-shipping holidays"
+  setting there.
+{%- endcomment -%}
+{%- liquid
+  assign cutoff = block.settings.delivery_cutoff_hour | default: 12
+  assign processing = block.settings.delivery_processing_days | default: 2
+  assign transit_min = block.settings.delivery_transit_min | default: 3
+  assign transit_max = block.settings.delivery_transit_max | default: 5
+  assign holidays = block.settings.delivery_holidays | strip_newlines | remove: ' '
+  assign test_now = block.settings.delivery_test_now | strip
+-%}
+<div
+  class="delivery-estimate"
+  data-delivery-estimate
+  data-cutoff="{{ cutoff }}"
+  data-processing="{{ processing }}"
+  data-transit-min="{{ transit_min }}"
+  data-transit-max="{{ transit_max }}"
+  data-holidays="{{ holidays | escape }}"
+  data-timezone="America/New_York"
+  {%- if test_now != blank %} data-test-now="{{ test_now | escape }}"{% endif %}
+  hidden
+>
+  <p class="delivery-estimate__message">
+    Order by <strong data-delivery-order-by></strong>, arrives <strong class="delivery-estimate__window" data-delivery-window></strong>
+  </p>
+  <p class="delivery-estimate__note">Faster arrival options available in checkout</p>
+</div>
+
+{%- style -%}
+  /* OY design tokens (Figma). Provisional values – replace with Figma Dev Mode values. */
+  :root {
+    --oy-space-medium: 16px;
+    --oy-radius-subtle: 4px;
+    --oy-color-estimate: {{ settings.color_body_text | default: '#1c1d1d' | color_modify: 'alpha', 0.05 }};
+    --oy-color-text: {{ settings.color_body_text | default: '#1c1d1d' }};
+    --oy-color-muted: {{ settings.color_body_text | default: '#1c1d1d' | color_modify: 'alpha', 0.7 }};
+  }
+  .tpo_option-set-wrapper:has(.tpo_hidden.tpo_undefined) {
+    display: none !important;
+  }
+
+  .product__quantity {
+    margin-bottom: -10px !important;
+  }
+
+  .delivery-estimate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 2px;
+    background: #FAF6F3;
+    color: #282828;
+    text-align: center;
+    display: none;
+  }
+  .delivery-estimate[hidden],
+  .product-single__form:has(.add-to-cart[disabled]) .delivery-estimate {
+    display: none;
+  }
+  .delivery-estimate__message,
+  .delivery-estimate__note {
+    margin: 0;
+    color: #282828;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .delivery-estimate__window {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 768px) {
+    .delivery-estimate__window {
+      display: block;
+    }
+
+    .product__quantity {
+      margin-bottom: 0 !important;
+  }
+  }
+{%- endstyle -%}
+
+<script>
+  (function () {
+    var DAY = 86400000;
+    var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    // Wall-clock date/time of `date` (default: now) in an IANA time zone.
+    // The zone name handles EST/EDT switches; never use a fixed UTC offset here.
+    function getZonedNow(timeZone, date) {
+      var parts = {};
+      new Intl.DateTimeFormat('en-US', {
+        timeZone: timeZone,
+        hourCycle: 'h23',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      }).formatToParts(date || new Date()).forEach(function (p) {
+        parts[p.type] = p.value;
+      });
+      return {
+        year: +parts.year,
+        month: +parts.month,
+        day: +parts.day,
+        hour: +parts.hour % 24,
+        minute: +parts.minute
+      };
+    }
+
+    function ymd(t) {
+      return new Date(t).toISOString().slice(0, 10);
+    }
+
+    function cutoffLabel(h) {
+      if (h === 12) return 'noon';
+      if (h === 0) return 'midnight';
+      return (h % 12 || 12) + (h < 12 ? ' AM' : ' PM');
+    }
+
+    // "Oct 22–26" within a month, "Oct 29 – Nov 2" across months.
+    function formatRange(a, b) {
+      a = new Date(a);
+      b = new Date(b);
+      var start = MONTHS[a.getUTCMonth()] + ' ' + a.getUTCDate();
+      if (a.getTime() === b.getTime()) return start;
+      if (a.getUTCFullYear() === b.getUTCFullYear() && a.getUTCMonth() === b.getUTCMonth()) {
+        return start + '–' + b.getUTCDate();
+      }
+      return start + ' – ' + MONTHS[b.getUTCMonth()] + ' ' + b.getUTCDate();
+    }
+
+    // Pure: `now` is the store's wall clock { year, month (1-12), day, hour, minute }.
+    // config: { cutoff, processing, transitMin, transitMax, holidays: ['YYYY-MM-DD'] }
+    function getDeliveryWindow(now, config) {
+      var today = Date.UTC(now.year, now.month - 1, now.day);
+      if (isNaN(today) || isNaN(now.hour)) throw new Error('Invalid date');
+      ['cutoff', 'processing', 'transitMin', 'transitMax'].forEach(function (k) {
+        if (typeof config[k] !== 'number' || isNaN(config[k])) throw new Error('Invalid ' + k);
+      });
+      var holidays = (config.holidays || []).filter(function (h) {
+        return /^\d{4}-\d{2}-\d{2}$/.test(h);
+      });
+
+      function isBiz(t) {
+        var wd = new Date(t).getUTCDay();
+        return wd !== 0 && wd !== 6 && holidays.indexOf(ymd(t)) === -1;
+      }
+      function addBiz(t, count) {
+        for (var i = 0; i < count; i++) {
+          do { t += DAY; } while (!isBiz(t));
+        }
+        return t;
+      }
+
+      // At exactly the cutoff hour the order counts as after the cutoff.
+      var orderDay = isBiz(today) && now.hour < config.cutoff ? today : addBiz(today, 1);
+      var shipDay = addBiz(orderDay, config.processing);
+      var first = addBiz(shipDay, config.transitMin);
+      var last = addBiz(shipDay, Math.max(config.transitMax, config.transitMin));
+
+      var diff = Math.round((orderDay - today) / DAY);
+      var when = diff === 0 ? 'today'
+        : diff === 1 && isBiz(today) ? 'tomorrow'
+        : WEEKDAYS[new Date(orderDay).getUTCDay()];
+
+      return {
+        orderBy: cutoffLabel(config.cutoff) + ' ' + when,
+        arrivalText: formatRange(first, last)
+      };
+    }
+
+    // Theme-editor test override: "YYYY-MM-DD HH:MM" in store time.
+    function parseTestNow(value) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{1,2}):(\d{2})$/.exec(value);
+      if (!m) throw new Error('Invalid test date');
+      return { year: +m[1], month: +m[2], day: +m[3], hour: +m[4], minute: +m[5] };
+    }
+
+    function render(el) {
+      var d = el.dataset;
+      var now = d.testNow ? parseTestNow(d.testNow) : getZonedNow(d.timezone);
+      var result = getDeliveryWindow(now, {
+        cutoff: parseInt(d.cutoff, 10),
+        processing: parseInt(d.processing, 10),
+        transitMin: parseInt(d.transitMin, 10),
+        transitMax: parseInt(d.transitMax, 10),
+        holidays: (d.holidays || '').split(',')
+      });
+      el.querySelector('[data-delivery-order-by]').textContent = result.orderBy;
+      el.querySelector('[data-delivery-window]').textContent = result.arrivalText;
+      el.hidden = false;
+    }
+
+    function safeRender(el) {
+      try {
+        render(el);
+      } catch (e) {
+        el.hidden = true;
+      }
+    }
+
+    function init() {
+      document.querySelectorAll('[data-delivery-estimate]').forEach(function (el) {
+        if (el.dataset.deliveryReady) return;
+        el.dataset.deliveryReady = 'true';
+        safeRender(el);
+        setInterval(function () { safeRender(el); }, 60000);
+      });
+    }
+
+    window.OYDeliveryEstimate = {
+      getDeliveryWindow: getDeliveryWindow,
+      getZonedNow: getZonedNow
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+    // Re-render after setting changes in the theme editor.
+    document.addEventListener('shopify:section:load', init);
+  })();
+</script>

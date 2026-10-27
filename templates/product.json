@@ -95,7 +95,14 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "surface_pickup_enable": false
+            "surface_pickup_enable": false,
+            "delivery_estimate_enable": true,
+            "delivery_cutoff_hour": 12,
+            "delivery_processing_days": 2,
+            "delivery_transit_min": 3,
+            "delivery_transit_max": 5,
+            "delivery_holidays": "2026-11-26, 2026-12-25, 2027-01-01, 2027-11-25, 2027-12-25, 2028-01-01",
+            "delivery_test_now": ""
           }
         },
         "smartsize_app_block_fhmL7m": {

@@ -1,0 +1,178 @@
+{{ 'help-returns.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .help-returns--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round }}px;
+  }
+  @media only screen and (min-width: 769px) {
+    .help-returns--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="help-returns help-returns--{{ section.id }} help-returns--{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    <div class="help-returns__inner">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'badge' -%}
+            {%- if block.settings.image != blank -%}
+              {%- liquid
+                assign badge_width = block.settings.max_width
+                assign badge_sizes = '(min-width: 769px) ' | append: badge_width | append: 'px, min(' | append: badge_width | append: 'px, 60vw)'
+              -%}
+              <div class="help-returns__block help-returns__badge" style="--help-returns-badge-max: {{ badge_width }}px;" {{ block.shopify_attributes }}>
+                {{
+                  block.settings.image
+                  | image_url: width: 800
+                  | image_tag:
+                    class: 'help-returns__badge-image',
+                    widths: '200, 300, 400, 600, 800',
+                    sizes: badge_sizes,
+                    loading: 'lazy',
+                    alt: block.settings.alt
+                }}
+              </div>
+            {%- endif -%}
+          {%- when 'content_section' -%}
+            <div class="help-returns__block" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <h2 class="help-returns__heading h3">{{ block.settings.heading | escape }}</h2>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="rte">{{ block.settings.body }}</div>
+              {%- endif -%}
+            </div>
+          {%- when 'note' -%}
+            {%- if block.settings.text != blank -%}
+              <div class="help-returns__block help-returns__note rte" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Returns Content",
+  "tag": "section",
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "info": "Uses the theme colors: body background, or the slightly dimmed body background.",
+      "default": "default",
+      "options": [
+        { "value": "default", "label": "Default" },
+        { "value": "subtle", "label": "Subtle" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile padding is 75% of these values."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Nothing renders when empty."
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "default": "Customer Satisfaction 100% Guaranteed"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "label": "Max width",
+          "min": 120,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "default": 220
+        }
+      ]
+    },
+    {
+      "type": "content_section",
+      "name": "Content section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Section heading",
+          "info": "Rendered as an H2. Use Heading 3 for sub-headings in the body."
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Use this text to share details with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "name": "Note",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>For questions and inquiries please contact us.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Returns Content",
+      "blocks": [
+        { "type": "badge" },
+        { "type": "content_section" },
+        { "type": "note" }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

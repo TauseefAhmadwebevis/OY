@@ -1,0 +1,72 @@
+{%- comment -%}
+  Site-wide Organization + WebSite JSON-LD. Rendered once from layout/theme.liquid.
+  sameAs uses the same social settings (and order) as snippets/social-icons.liquid,
+  so the footer and schema stay in sync. Blank and non-https links are skipped.
+{%- endcomment -%}
+{%- liquid
+  assign trustpilot_url = 'https://www.trustpilot.com/review/ornamentallyyou.com'
+  assign etsy_url = 'https://www.etsy.com/shop/OrnamentallyYouGifts'
+
+  capture same_as_candidates
+    echo settings.social_instagram_link | append: '|'
+    echo settings.social_facebook_link | append: '|'
+    echo settings.social_youtube_link | append: '|'
+    echo settings.social_twitter_link | append: '|'
+    echo settings.social_pinterest_link | append: '|'
+    echo settings.social_snapchat_link | append: '|'
+    echo settings.social_tiktok_link | append: '|'
+    echo settings.social_tumblr_link | append: '|'
+    echo settings.social_linkedin_link | append: '|'
+    echo settings.social_vimeo_link | append: '|'
+    echo trustpilot_url | append: '|'
+    echo etsy_url
+  endcapture
+
+  assign same_as = ''
+  assign same_as_candidates = same_as_candidates | split: '|'
+  for candidate in same_as_candidates
+    assign same_as_url = candidate | strip
+    assign same_as_scheme = same_as_url | slice: 0, 8 | downcase
+    if same_as_scheme == 'https://' and same_as_url.size > 8
+      assign same_as = same_as | append: same_as_url | append: '|'
+    endif
+  endfor
+  assign same_as = same_as | split: '|' | uniq
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ornamentallyyou.com/#org",
+      "name": "OrnamentallyYou",
+      "alternateName": ["Ornamentally You", "OY"],
+      "url": "https://ornamentallyyou.com/",
+      "logo": "https://ornamentallyyou.com/cdn/shop/files/ORNAMENTALLY_YOU_LOGO_3.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "customerservice@ornamentallyyou.com",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        {%- for url in same_as -%}
+          {{ url | json }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ornamentallyyou.com/#website",
+      "url": "https://ornamentallyyou.com/",
+      "name": "OrnamentallyYou",
+      "publisher": { "@id": "https://ornamentallyyou.com/#org" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ornamentallyyou.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>

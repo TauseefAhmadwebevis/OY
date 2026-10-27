@@ -104,8 +104,8 @@
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/Social-Proof-2024-Desktop-Banner_9978c371-bb53-40c7-876c-b2a14903c8e4.png",
-            "image_mobile": "shopify://shop_images/Social-Proof-2024--Mobile-Banner_7c5e7795-ce96-40f7-8120-30be8c4eb913.png",
+            "image": "shopify://shop_images/Desktop_Handcrafted_Holiday_Ornament_Collage.png",
+            "image_mobile": "shopify://shop_images/Mobile_Festive_Handcrafted_Ornaments_Collage.png",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
@@ -205,7 +205,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Over 7,000 5-Star Reviews ★★★★★ 150,000+ Happy Customers</p>"
+            "text": "<p>Over [review_count] 5-Star Reviews ★★★★★ 150,000+ Happy Customers</p>"
           }
         }
       },

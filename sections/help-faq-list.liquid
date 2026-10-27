@@ -1,0 +1,220 @@
+{{ 'help-faq.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'help-faq-search.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign cards = section.blocks | where: 'type', 'category'
+  assign questions = section.blocks | where: 'type', 'question'
+-%}
+
+<div
+  class="help-faq page-width"
+  data-help-faq
+  data-result-one="1 result found"
+  data-result-many="[count] results found"
+>
+  {%- if cards.size > 0 -%}
+    <ul class="help-faq-cards" role="list" aria-label="FAQ categories">
+      {%- for card in cards -%}
+        {%- liquid
+          assign card_key = card.settings.title | strip | downcase
+          assign count = 0
+          for question in questions
+            assign question_key = question.settings.category | strip | downcase
+            if question_key != blank and question_key == card_key
+              assign count = count | plus: 1
+            endif
+          endfor
+        -%}
+        {%- liquid
+          assign filter = false
+          if section.settings.card_behavior == 'filter' and questions.size > 0
+            assign filter = true
+          endif
+          assign controls = 'HelpFaqItems-' | append: section.id
+          render 'help-faq-card', card: card, count: count, filter: filter, controls: controls
+        -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+  <div class="help-faq-list">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="help-faq-list__heading h2">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if questions.size > 0 -%}
+      <div class="help-faq-search" role="search">
+        <label for="HelpFaqSearch-{{ section.id }}" class="visually-hidden">
+          {{- section.settings.search_placeholder | default: 'Search for answers' | escape -}}
+        </label>
+        <svg aria-hidden="true" focusable="false" class="help-faq-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="m21 21-5.5-5.5"/></svg>
+        <input
+          type="search"
+          id="HelpFaqSearch-{{ section.id }}"
+          class="help-faq-search__input"
+          placeholder="{{ section.settings.search_placeholder | escape }}"
+          autocomplete="off"
+          spellcheck="false"
+          aria-controls="HelpFaqItems-{{ section.id }}"
+          data-help-faq-input
+        >
+        <button type="button" class="help-faq-search__clear" aria-label="Clear search" hidden data-help-faq-clear>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m1 1 12 12M13 1 1 13"/></svg>
+        </button>
+      </div>
+
+      <p class="visually-hidden" role="status" aria-live="polite" data-help-faq-status></p>
+      <p class="help-faq-list__empty" hidden data-help-faq-empty>{{ section.settings.no_results | escape }}</p>
+
+      <div class="help-faq-list__items" id="HelpFaqItems-{{ section.id }}">
+        {%- for block in questions -%}
+          <details class="help-faq-item" id="faq-{{ block.id }}" name="help-faq-{{ section.id }}" data-help-faq-item data-help-faq-category="{{ block.settings.category | strip | downcase | escape }}" {{ block.shopify_attributes }}>
+            <summary class="help-faq-item__question">
+              <span>{{ block.settings.question | escape }}</span>
+              <svg aria-hidden="true" focusable="false" class="help-faq-item__chevron" viewBox="0 0 28 16"><path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="currentColor" fill="none"/></svg>
+            </summary>
+            <div class="help-faq-item__answer rte">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        {%- endfor -%}
+      </div>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {%- for block in questions %}
+              {
+                "@type": "Question",
+                "name": {{ block.settings.question | json }},
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": {{ block.settings.answer | json }}
+                }
+              }{% unless forloop.last %},{% endunless %}
+            {%- endfor %}
+          ]
+        }
+      </script>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ List",
+  "tag": "section",
+  "class": "index-section",
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search for answers"
+    },
+    {
+      "type": "text",
+      "id": "no_results",
+      "label": "No results message",
+      "default": "No matching questions. Try a different search term."
+    },
+    {
+      "type": "select",
+      "id": "card_behavior",
+      "label": "Category card click",
+      "default": "filter",
+      "options": [
+        { "value": "filter", "label": "Show that category's questions (tabs)" },
+        { "value": "link", "label": "Open the card link" }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Category cards show above the search. Each card's article count is calculated from the Question blocks whose Category matches the card title (not case-sensitive)."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category card",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Category"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "select",
+          "id": "fallback_icon",
+          "label": "Fallback icon",
+          "info": "Used when no icon image is set.",
+          "default": "question",
+          "options": [
+            { "value": "question", "label": "Question" },
+            { "value": "box", "label": "Box" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "return", "label": "Return" }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link",
+          "info": "Leave empty to show the card without a link."
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Frequently asked question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Use this text to answer the question in as much detail as needed.</p>"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Category",
+          "info": "Must match a category card title to be counted on that card."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ List",
+      "blocks": [
+        { "type": "question" },
+        { "type": "question" }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

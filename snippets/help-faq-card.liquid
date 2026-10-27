@@ -1,0 +1,34 @@
+{%- comment -%}
+  FAQ category card.
+  - card {Object} block with title, icon, fallback_icon and url settings
+  - count {Number} optional article count; the count line is omitted when not passed
+  - filter {Boolean} optional; renders the card as a toggle button that filters FAQ items by its title
+{%- endcomment -%}
+{%- liquid
+  assign card_tag = 'div'
+  if filter
+    assign card_tag = 'button'
+  elsif card.settings.url != blank
+    assign card_tag = 'a'
+  endif
+-%}
+<li class="help-faq-cards__item" {{ card.shopify_attributes }}>
+  <{{ card_tag }} class="help-faq-card{% if card_tag != 'div' %} help-faq-card--link{% endif %}"
+    {%- if card_tag == 'a' %} href="{{ card.settings.url }}"{% endif %}
+    {%- if card_tag == 'button' %} type="button" aria-pressed="false" aria-controls="{{ controls }}" data-help-faq-tab="{{ card.settings.title | strip | downcase | escape }}"{% endif -%}
+  >
+    <span class="help-faq-card__icon" aria-hidden="true">
+      {%- if card.settings.icon != blank -%}
+        {{ card.settings.icon | image_url: width: 96 | image_tag: width: 40, height: 40, widths: '48, 96', sizes: '40px', alt: '' }}
+      {%- else -%}
+        {%- render 'help-faq-icon', icon: card.settings.fallback_icon -%}
+      {%- endif -%}
+    </span>
+    <span class="help-faq-card__title">{{ card.settings.title | escape }}</span>
+    {%- if count != nil -%}
+      <span class="help-faq-card__count">
+        {{- count }} {% if count == 1 %}article{% else %}articles{% endif -%}
+      </span>
+    {%- endif -%}
+  </{{ card_tag }}>
+</li>

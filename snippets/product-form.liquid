@@ -23,6 +23,12 @@
       endunless
     -%}
 
+    {%- if block.settings.delivery_estimate_enable and product.available -%}
+      {%- unless template contains 'preorder' or product.gift_card? -%}
+        {%- render 'delivery-estimate', block: block -%}
+      {%- endunless -%}
+    {%- endif -%}
+
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"

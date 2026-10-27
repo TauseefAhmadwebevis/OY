@@ -68,7 +68,7 @@
           "type": "menu",
           "settings": {
             "show_footer_title": true,
-            "menu": "company-info",
+            "menu": "company-info-dev-theme",
             "container_width": 21
           }
         },
@@ -77,7 +77,7 @@
           "settings": {
             "show_footer_title": true,
             "title": "Community",
-            "text": "<p><a href=\"https://www.facebook.com/groups/thechristmaswonderland\" target=\"_blank\" title=\"https://www.facebook.com/groups/thechristmaswonderland\">Join our Facebook group to be a part of an awesome Christmas community! <br/><em>450k members and counting!<br/><br/></em></a>Check out our <a href=\"https://ornamentallyyou.com/a/blog\" target=\"_blank\" title=\"https://ornamentallyyou.com/a/blog\">blog!</a> </p><p><strong>Sign up and Save!</strong></p><p>Subscribe to get special offers, free giveaways, and once-in-a-year deals.</p>",
+            "text": "<p><a href=\"https://www.facebook.com/groups/thechristmaswonderland\" target=\"_blank\" title=\"https://www.facebook.com/groups/thechristmaswonderland\">Join our Facebook group to be a part of an awesome Christmas community!&nbsp;<br/><em>450k members and counting!<br/></em></a></p><p><strong>Sign up and Save!</strong></p><p>Subscribe to get special offers, free giveaways, and once-in-a-year deals.</p>",
             "container_width": 33
           }
         },
@@ -85,7 +85,7 @@
           "type": "menu",
           "settings": {
             "show_footer_title": true,
-            "menu": "footer",
+            "menu": "policies-dev-theme",
             "container_width": 21
           }
         },

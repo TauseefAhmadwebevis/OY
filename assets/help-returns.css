@@ -1,0 +1,92 @@
+/* Returns page content column. Mirrors help-shipping.css; theme tokens only (see css-variables / theme.css.liquid). */
+
+.help-returns {
+  background-color: var(--help-returns-bg, var(--colorBody));
+  color: var(--colorTextBody);
+}
+
+.help-returns--subtle {
+  --help-returns-bg: var(--colorBodyLightDim);
+}
+
+.help-returns__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.help-returns__block + .help-returns__block {
+  margin-top: 32px;
+}
+
+.help-returns__badge {
+  text-align: center;
+}
+
+.help-returns__badge-image {
+  display: block;
+  width: 100%;
+  max-width: min(var(--help-returns-badge-max), 60vw);
+  height: auto;
+  margin: 0 auto;
+}
+
+.help-returns__heading {
+  margin-bottom: 12px;
+}
+
+.help-returns .rte p {
+  line-height: calc(var(--typeBaseLineHeight) * 1.1);
+}
+
+.help-returns .rte h3 {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-size: calc(var(--typeBaseSize) * 1.15);
+}
+
+.help-returns .rte h3:first-child {
+  margin-top: 0;
+}
+
+.help-returns .rte ul,
+.help-returns .rte ol {
+  margin-left: 1.25em;
+}
+
+.help-returns .rte li {
+  padding-left: 0.25em;
+}
+
+.help-returns .rte li + li {
+  margin-top: 0.5em;
+}
+
+.help-returns .rte li::marker {
+  color: var(--colorTextBody);
+}
+
+.help-returns__note {
+  padding-top: 24px;
+  border-top: 1px solid var(--colorBorder);
+  font-size: calc(var(--typeBaseSize) * 0.9);
+}
+
+.help-returns .rte a:focus-visible {
+  outline: 2px solid var(--colorTextBody);
+  outline-offset: 2px;
+}
+
+@media only screen and (min-width: 769px) {
+  .help-returns__block + .help-returns__block {
+    margin-top: 48px;
+  }
+
+  .help-returns__heading {
+    margin-bottom: 16px;
+  }
+
+  .help-returns .rte h3 {
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+}

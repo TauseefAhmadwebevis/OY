@@ -1,0 +1,16 @@
+{%- comment -%}
+  Fallback line icons for FAQ category cards (used when no icon image is set).
+  - icon {String} box | truck | return | question
+{%- endcomment -%}
+<svg aria-hidden="true" focusable="false" class="help-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  {%- case icon -%}
+    {%- when 'box' -%}
+      <path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5M12 13v8"/>
+    {%- when 'truck' -%}
+      <path d="M1.5 5h13v11h-13zM14.5 9h4l3.5 3.5V16h-7.5"/><circle cx="6" cy="17.5" r="2"/><circle cx="18" cy="17.5" r="2"/>
+    {%- when 'return' -%}
+      <path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/>
+    {%- else -%}
+      <circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-2.9 3-2.9 3M12 17h.01"/>
+  {%- endcase -%}
+</svg>

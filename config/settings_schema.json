@@ -1043,6 +1043,21 @@
     ]
   },
   {
+    "name": "Reviews",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Type [review_count] in the header toolbar messages or a Rich text block to show the total review count. It uses the live Loox total first, then the shop metafield custom.total_reviews (integer), otherwise the number below."
+      },
+      {
+        "type": "text",
+        "id": "review_count",
+        "label": "Total review count (fallback)",
+        "default": "19,000"
+      }
+    ]
+  },
+  {
     "name": "Swym Wishlist Product Button",
     "settings": [
       {

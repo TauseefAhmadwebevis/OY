@@ -1,0 +1,37 @@
+{% comment %}
+  Outputs the store-wide review total used by the [review_count] token.
+  Source (first one set wins), formatted with thousands separators:
+    1. Loox global stats (shop.metafields.loox.global_stats) - same number
+       the Loox star rating / trust badge shows, updates automatically
+    2. shop metafield custom.total_reviews (integer) - manual override
+    3. Theme settings > Reviews fallback text
+{% endcomment %}
+{%- liquid
+  assign total = blank
+  assign loox_stats = shop.metafields.loox.global_stats.value
+  if loox_stats != blank
+    assign total = loox_stats.total_ratings | default: loox_stats.total_reviews | default: loox_stats.reviews_count
+  endif
+  if total == blank
+    assign total = shop.metafields.custom.total_reviews.value
+  endif
+
+  if total != blank
+    assign digits = total | round | append: ''
+    assign len = digits.size
+    assign last = len | minus: 1
+    assign formatted = ''
+    for i in (0..last)
+      assign digit = digits | slice: i
+      assign formatted = formatted | append: digit
+      assign remaining = last | minus: i
+      assign mod = remaining | modulo: 3
+      if remaining > 0 and mod == 0
+        assign formatted = formatted | append: ','
+      endif
+    endfor
+    echo formatted
+  else
+    echo settings.review_count | escape
+  endif
+-%}

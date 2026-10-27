@@ -1,0 +1,65 @@
+/* Shipping page content column. Theme tokens only (see css-variables / theme.css.liquid). */
+
+.help-shipping {
+  background-color: var(--help-shipping-bg, var(--colorBody));
+  color: var(--colorTextBody);
+}
+
+.help-shipping--subtle {
+  --help-shipping-bg: var(--colorBodyLightDim);
+}
+
+.help-shipping__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.help-shipping__intro {
+  font-size: calc(var(--typeBaseSize) * 1.05);
+}
+
+.help-shipping__block + .help-shipping__block {
+  margin-top: 32px;
+}
+
+.help-shipping__heading {
+  margin-bottom: 12px;
+}
+
+.help-shipping .rte ul,
+.help-shipping .rte ol {
+  margin-left: 1.25em;
+}
+
+.help-shipping .rte li {
+  padding-left: 0.25em;
+}
+
+.help-shipping .rte li + li {
+  margin-top: 0.5em;
+}
+
+.help-shipping .rte li::marker {
+  color: var(--colorTextBody);
+}
+
+.help-shipping__note {
+  padding-top: 24px;
+  border-top: 1px solid var(--colorBorder);
+  font-size: calc(var(--typeBaseSize) * 0.9);
+}
+
+.help-shipping .rte a:focus-visible {
+  outline: 2px solid var(--colorTextBody);
+  outline-offset: 2px;
+}
+
+@media only screen and (min-width: 769px) {
+  .help-shipping__block + .help-shipping__block {
+    margin-top: 48px;
+  }
+
+  .help-shipping__heading {
+    margin-bottom: 16px;
+  }
+}

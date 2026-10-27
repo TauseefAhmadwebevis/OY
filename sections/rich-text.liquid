@@ -17,8 +17,13 @@
         {%- when 'text' -%}
           <div class="rte">
             {%- if block.settings.text != blank -%}
+              {%- assign block_text = block.settings.text -%}
+              {%- if block_text contains '[review_count]' -%}
+                {%- capture review_count -%}{%- render 'review-count' -%}{%- endcapture -%}
+                {%- assign block_text = block_text | replace: '[review_count]', review_count -%}
+              {%- endif -%}
               {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
-              {{ block.settings.text }}
+              {{ block_text }}
               {%- if block.settings.enlarge_text %}</div>{% endif -%}
             {%- else -%}
               {{ 'home_page.onboarding.no_content' | t }}

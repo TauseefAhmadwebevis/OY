@@ -327,6 +327,67 @@
       "label": "t:product_block.buy_buttons.settings.surface_pickup_enable.label",
       "info": "t:product_block.buy_buttons.settings.surface_pickup_enable.info",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Delivery estimate (above Add to Cart)"
+    },
+    {
+      "type": "checkbox",
+      "id": "delivery_estimate_enable",
+      "label": "Show delivery estimate",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "delivery_cutoff_hour",
+      "label": "Daily order cutoff hour (store time, 24h)",
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "delivery_processing_days",
+      "label": "Handling time (business days)",
+      "info": "Business days between the order cutoff and shipping. 0 = ships same day.",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "delivery_transit_min",
+      "label": "Transit time minimum (business days)",
+      "min": 1,
+      "max": 15,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "delivery_transit_max",
+      "label": "Transit time maximum (business days)",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "delivery_holidays",
+      "label": "Non-shipping holidays",
+      "info": "Skipped as business days (weekends are always skipped). Comma-separated dates in YYYY-MM-DD format. Thanksgiving, Christmas and New Year's Day – add next year's dates each year.",
+      "default": "2026-11-26, 2026-12-25, 2027-01-01, 2027-11-25, 2027-12-25, 2028-01-01"
+    },
+    {
+      "type": "text",
+      "id": "delivery_test_now",
+      "label": "Test date and time (Eastern)",
+      "info": "For testing. Overrides the real time for everyone viewing this theme – clear it before publishing. Format YYYY-MM-DD HH:MM (24h), e.g. 2026-10-16 13:00. Leave blank to use the real time.",
+      "placeholder": "2026-10-16 13:00"
     }
   ]
 },

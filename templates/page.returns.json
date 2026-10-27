@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "help-faq-banner",
+      "settings": {
+        "heading": "Returns & Refunds",
+        "overlay_opacity": 30,
+        "height_desktop": 360,
+        "height_mobile": 220,
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "content": {
+      "type": "help-returns-content",
+      "blocks": {
+        "badge": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify://shop_images/Customer_Satisfaction_100_Guaranteed.png",
+            "alt": "Customer Satisfaction 100% Guaranteed",
+            "max_width": 220
+          }
+        },
+        "returns": {
+          "type": "content_section",
+          "settings": {
+            "heading": "Returns",
+            "body": "<p>To be eligible for a return and/or exchange, your item(s) must be unused, unworn, and in the original condition and packaging (if applicable) that you received it in within 30 days of purchase. Unfortunately after 30 days, we are unable to process any returns or exchanges. To proceed with a return, first contact us at <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a> with subject header \"Return Request\" and provide us with the <strong>name, address</strong> and <strong>order number</strong>.</p><p>Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. If your refund is approved, a credit will automatically be applied to the original method of payment, within 3 to 6 business days, for the value of the item returned and any applicable taxes associated with the item. Shipping costs are NON-REFUNDABLE; the cost of return shipping will be deducted from your refund.</p><p>All Sale and Personalized items are considered final and are thus ineligible for returns.</p>"
+          }
+        },
+        "cancellations": {
+          "type": "content_section",
+          "settings": {
+            "heading": "Order Cancellations",
+            "body": "<p>Orders cancellation requests must be made as soon as possible for the best possible chance of cancellation. Once orders have begun the processing phase, they cannot be cancelled from that. To cancel your order, please contact us at <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a> with the subject header \"Cancel Request\". Provide us with the <strong>name, address</strong>, <strong>order number</strong> and <strong>reason for cancellation</strong>.</p>"
+          }
+        },
+        "refunds": {
+          "type": "content_section",
+          "settings": {
+            "heading": "Refunds and Replacements",
+            "body": "<p>Refunds and replacements are eligible under the following conditions:</p><ul><li>The item is damaged</li><li>Wrong item received</li><li>The item is lost in the mail</li><li>The item is returned by no fault of the buyer</li></ul><h3>The Item is Damaged</h3><p>If your item is damaged, we will ask that customers send an image of the damaged item to <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a> so therefore we can make a determination. Please include the <strong>name, address</strong> and <strong>order number</strong>. After we have received your picture, we will ask you if you want a refund or a replacement and proceed to take the appropriate course of action as soon as possible and keep you notified in the process.</p><h3>Wrong Item Received</h3><p>We sincerely apologize for the mix-up and want to ensure you get the correct item as promptly as possible! Please contact <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a> with the <strong>name, address</strong> and <strong>order number</strong> for the item. We inquire whether you want the correct replacement order promptly shipped to you or a refund for the order. In either case, we will ask that you ship the item that you had received back to us. You are of course permitted to take no course of action and keep the item if you wish to do so.</p><h3>The Item is Lost in the Mail</h3><p>First off, we want to make it clear that this is an extremely frustrating circumstance for the both of us. When we ship out items, we expect that the carrier will handle and ship the items out quickly and in good faith. Once the item is in the carrier's possession, we can only see and know as much as you do and that's what is indicated on the tracking information. Sometimes and for unexpected reasons items are stuck in transit much longer than usual. In the case there's been no updates please contact us at <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a>. The next steps would be that we would have to open a ticket with the carrier, and get official confirmation that the items are lost. Once we get an update from the carrier, we will email you with the item's status. If it's been an unreasonably long amount of time with no update or carrier response, then we will likely presuppose the item being lost and send you a new one promptly. If the supposedly lost item does turn up, we ask that you contact us and return the item in good faith.</p><p>Understandably, we cannot refund substantially delayed orders due to carrier mishaps or adverse weather conditions.</p><h3>The Item is Returned by No Fault of the Buyer</h3><p>In this rare situation, we will promptly reship the item back to you. If the item is returned because of an invalid address, we will ask that you repay the shipping cost on our end through our Paypal Address: customerservice@ornamentallyyou.com. This will also apply for items that were shipped for free. If you change your mind about the item, then we will refund you the cost of the item minus our shipping costs.</p>"
+          }
+        },
+        "general": {
+          "type": "content_section",
+          "settings": {
+            "heading": "General",
+            "body": "<p>If you do not comply with any of the above conditions, We reserve the right to refuse the return or exchange, or to impose different or additional conditions. For more information and all other questions please contact <a href=\"mailto:customerservice@ornamentallyyou.com\">customerservice@ornamentallyyou.com</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge",
+        "returns",
+        "cancellations",
+        "refunds",
+        "general"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "content"
+  ]
+}
