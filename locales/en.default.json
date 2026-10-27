@@ -17,8 +17,7 @@
       "skip_to_content": "Skip to content",
       "close_modal": "Close (esc)",
       "close": "Close",
-      "learn_more": "Learn more",
-      "zoom_image": "Zoom image"
+      "learn_more": "Learn more"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",

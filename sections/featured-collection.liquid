@@ -35,6 +35,21 @@
           else
             assign fallback = 'variable'
           endif
+
+          # Perf: sizes matched to the real card width (capped by .page-width), not 25vw of the whole screen
+          assign card_mobile_size = ''
+          if section.settings.mobile_scrollable
+            assign card_mobile_size = '39vw'
+          endif
+          capture card_sizes
+            render 'product-grid-sizes', per_row: per_row, mobile: card_mobile_size
+          endcapture
+
+          # First row loads eagerly only when this section is near the top of the page (above the fold)
+          assign eager_cards = 0
+          if section.index <= 2
+            assign eager_cards = per_row | at_most: 4
+          endif
         -%}
 
         {%- if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 -%}
@@ -67,12 +82,20 @@
         {%- else -%}
 
           {%- for product in collections[section.settings.home_featured_products].products limit: product_limit -%}
+            {%- liquid
+              assign card_loading = 'lazy'
+              if forloop.index <= eager_cards
+                assign card_loading = 'eager'
+              endif
+            -%}
             {%- render 'product-grid-item',
               product: product,
               collection: collection,
               per_row: per_row,
               quick_shop_enable: settings.quick_shop_enable,
               fallback: fallback,
+              sizes: card_sizes,
+              loading: card_loading,
             -%}
           {%- endfor -%}
 

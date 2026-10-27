@@ -125,7 +125,14 @@
                       appear-delay-{{ forloop.index | times: 3 }}
                     {%- endcapture -%}
 
-                    {%- render 'image-element', img: media.preview_image, alt: media.alt, split: '#', widths: '120, 360, 540, 720', sizeVariable: '80px', loading: loading -%}
+                    {%- liquid
+                      # Perf (LCP): only the thumbnails visible on first paint load eagerly, the rest wait so they don't compete with the main image
+                      assign thumb_loading = loading
+                      if forloop.index > 4
+                        assign thumb_loading = 'lazy'
+                      endif
+                    -%}
+                    {%- render 'image-element', img: media.preview_image, alt: media.alt, split: '#', widths: '120, 180, 240, 360', sizeVariable: '80px', loading: thumb_loading -%}
                   </div>
                 </a>
               </div>

@@ -68,13 +68,35 @@ Snippet Arguments
     </div>
   </div>
 
+  {%- liquid
+    # Perf: the grid sits in the 4/5 column next to the filter sidebar (main-collection, main-search)
+    assign card_mobile_size = ''
+    if mobile_flush_grid
+      assign card_mobile_size = '50vw'
+    endif
+    capture card_sizes
+      render 'product-grid-sizes', per_row: per_row, column: 0.8, mobile: card_mobile_size
+    endcapture
+
+    # Only the first row is above the fold; capped at 4 so a 5-across grid doesn't add more eager images on mobile
+    assign eager_cards = per_row | times: 1 | at_most: 4
+  -%}
+
   <div class="grid grid--uniform{% if mobile_flush_grid %} small--grid--flush{% endif %}"{% unless enable_collection_count %} data-scroll-to{% endunless %}>
     {%- for item in items -%}
       {%- if item.object_type == 'product' -%}
+        {%- liquid
+          assign card_loading = 'lazy'
+          if forloop.index <= eager_cards
+            assign card_loading = 'eager'
+          endif
+        -%}
         {%- render 'product-grid-item',
           product: item,
           per_row: per_row,
-          quick_shop_enable: quick_shop_enable
+          quick_shop_enable: quick_shop_enable,
+          sizes: card_sizes,
+          loading: card_loading
         -%}
       {%- else -%}
         {%- render 'search-grid-item',
